@@ -1,0 +1,30 @@
+{
+  "btn_ask_question": "🎴 Ask a question",
+  "btn_explain_combination": "🃏 Explain my own combination",
+
+  "msg_welcome": "🔮 Welcome to Tarot Reading Bot!\n\nI can help you gain insights through Tarot card readings.\n\nChoose an option below to begin:",
+
+  "msg_help": "📖 How to Use Tarot Reading Bot\n\n🎴 Ask a Question:\n1. Click \"Ask a question\"\n2. Type your question in plain language\n3. Receive a 3-card Tarot reading with interpretation\n\n🃏 Explain Your Own Combination:\n1. Click \"Explain my own tarot combination\"\n2. Enter your card names (comma-separated)\n   Example: \"The Fool, The Tower, Three of Cups\"\n3. Receive an interpretation of your cards\n\n🌍 Languages Supported:\n• English\n• Русский (Russian)\n• Українська (Ukrainian)\n\nLanguage is detected automatically from your message.\n\n⚠️ Note: Tarot readings are for guidance and entertainment purposes only.",
+
+  "msg_prompt_question": "🎴 Ask Your Question\n\nPlease type your question in plain language. I will draw three Tarot cards and provide an interpretation.\n\nExamples:\n• \"Should I change my job?\"\n• \"What can I expect in my relationship?\"\n• \"What do I need to focus on today?\"\n\n💬 Type your question below:",
+
+  "msg_prompt_cards": "🃏 Enter Your Card Names\n\nPlease list the Tarot cards you've drawn, separated by commas.\n\nExamples:\n• \"The Fool, The Tower, Three of Cups\"\n• \"Magician, Wheel of Fortune, World\"\n\nI support card names in English, Russian, and Ukrainian.\n\n💬 Type your card names below:",
+
+  "msg_processing": "🔮 Drawing cards and interpreting...",
+
+  "msg_reading_title": "🎴 Your Tarot Reading",
+
+  "msg_disclaimer": "\n\n⚠️ This reading is for guidance and entertainment purposes only.",
+
+  "err_empty_question": "❌ Please provide a more detailed question (at least 5 characters).",
+
+  "err_long_question": "❌ Please keep your question under 500 characters.",
+
+  "err_no_cards_recognized": "❌ I couldn't recognize any valid Tarot card names in your message.\n\nPlease try again with card names like:\n• \"The Fool, The Tower, Three of Cups\"\n• \"Маг, Башня, Императрица\"\n\nOr send /help for more examples.",
+
+  "err_ai_service": "❌ Sorry, I encountered an error while generating your reading. Please try again in a moment, or send /start to restart.",
+
+  "err_rate_limit": "⏱️ Please wait a moment before sending another request. You can make {remaining} more requests in the next minute.",
+
+  "err_invalid_state": "❌ Sorry, I didn't understand that command.\n\nSend /start to begin a new reading, or /help for usage instructions."
+}

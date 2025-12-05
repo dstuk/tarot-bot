@@ -1,0 +1,1184 @@
+{
+  "major_arcana": [
+    {
+      "id": 0,
+      "names": {"en": "The Fool", "ru": "Дурак", "uk": "Дурень"},
+      "meanings": {
+        "en": {"upright": "New beginnings, innocence, spontaneity, free spirit, adventure"},
+        "ru": {"upright": "Новые начинания, невинность, спонтанность, свободный дух, приключения"},
+        "uk": {"upright": "Нові починання, невинність, спонтанність, вільний дух, пригоди"}
+      },
+      "keywords": {
+        "en": ["beginnings", "innocence", "journey", "potential", "faith"],
+        "ru": ["начало", "невинность", "путешествие", "потенциал", "вера"],
+        "uk": ["початок", "невинність", "подорож", "потенціал", "віра"]
+      },
+      "suit": null, "number": 0, "arcana": "major"
+    },
+    {
+      "id": 1,
+      "names": {"en": "The Magician", "ru": "Маг", "uk": "Маг"},
+      "meanings": {
+        "en": {"upright": "Manifestation, resourcefulness, power, inspired action, skill"},
+        "ru": {"upright": "Проявление, находчивость, сила, вдохновлённое действие, мастерство"},
+        "uk": {"upright": "Прояв, винахідливість, сила, натхненна дія, майстерність"}
+      },
+      "keywords": {
+        "en": ["manifestation", "power", "skill", "concentration", "action"],
+        "ru": ["проявление", "сила", "мастерство", "концентрация", "действие"],
+        "uk": ["прояв", "сила", "майстерність", "концентрація", "дія"]
+      },
+      "suit": null, "number": 1, "arcana": "major"
+    },
+    {
+      "id": 2,
+      "names": {"en": "The High Priestess", "ru": "Верховная Жрица", "uk": "Верховна Жриця"},
+      "meanings": {
+        "en": {"upright": "Intuition, sacred knowledge, divine feminine, subconscious mind"},
+        "ru": {"upright": "Интуиция, сакральное знание, божественная женственность, подсознание"},
+        "uk": {"upright": "Інтуїція, сакральне знання, божественна жіночність, підсвідомість"}
+      },
+      "keywords": {
+        "en": ["intuition", "mystery", "wisdom", "subconscious", "inner voice"],
+        "ru": ["интуиция", "тайна", "мудрость", "подсознание", "внутренний голос"],
+        "uk": ["інтуїція", "таємниця", "мудрість", "підсвідомість", "внутрішній голос"]
+      },
+      "suit": null, "number": 2, "arcana": "major"
+    },
+    {
+      "id": 3,
+      "names": {"en": "The Empress", "ru": "Императрица", "uk": "Імператриця"},
+      "meanings": {
+        "en": {"upright": "Femininity, beauty, nature, nurturing, abundance, creativity"},
+        "ru": {"upright": "Женственность, красота, природа, забота, изобилие, творчество"},
+        "uk": {"upright": "Жіночність, краса, природа, турбота, достаток, творчість"}
+      },
+      "keywords": {
+        "en": ["abundance", "nurturing", "fertility", "creativity", "beauty"],
+        "ru": ["изобилие", "забота", "плодородие", "творчество", "красота"],
+        "uk": ["достаток", "турбота", "родючість", "творчість", "краса"]
+      },
+      "suit": null, "number": 3, "arcana": "major"
+    },
+    {
+      "id": 4,
+      "names": {"en": "The Emperor", "ru": "Император", "uk": "Імператор"},
+      "meanings": {
+        "en": {"upright": "Authority, structure, control, fatherhood, leadership, stability"},
+        "ru": {"upright": "Власть, структура, контроль, отцовство, лидерство, стабильность"},
+        "uk": {"upright": "Влада, структура, контроль, батьківство, лідерство, стабільність"}
+      },
+      "keywords": {
+        "en": ["authority", "structure", "control", "leadership", "father"],
+        "ru": ["власть", "структура", "контроль", "лидерство", "отец"],
+        "uk": ["влада", "структура", "контроль", "лідерство", "батько"]
+      },
+      "suit": null, "number": 4, "arcana": "major"
+    },
+    {
+      "id": 5,
+      "names": {"en": "The Hierophant", "ru": "Иерофант", "uk": "Ієрофант"},
+      "meanings": {
+        "en": {"upright": "Spiritual wisdom, religious beliefs, tradition, conformity, institutions"},
+        "ru": {"upright": "Духовная мудрость, религиозные убеждения, традиция, конформизм, институты"},
+        "uk": {"upright": "Духовна мудрість, релігійні переконання, традиція, конформізм, інституції"}
+      },
+      "keywords": {
+        "en": ["tradition", "conformity", "morality", "ethics", "spiritual wisdom"],
+        "ru": ["традиция", "конформизм", "мораль", "этика", "духовная мудрость"],
+        "uk": ["традиція", "конформізм", "мораль", "етика", "духовна мудрість"]
+      },
+      "suit": null, "number": 5, "arcana": "major"
+    },
+    {
+      "id": 6,
+      "names": {"en": "The Lovers", "ru": "Влюблённые", "uk": "Закохані"},
+      "meanings": {
+        "en": {"upright": "Love, harmony, relationships, values alignment, choices, partnerships"},
+        "ru": {"upright": "Любовь, гармония, отношения, согласование ценностей, выбор, партнёрство"},
+        "uk": {"upright": "Кохання, гармонія, стосунки, узгодження цінностей, вибір, партнерство"}
+      },
+      "keywords": {
+        "en": ["love", "harmony", "relationships", "choices", "values"],
+        "ru": ["любовь", "гармония", "отношения", "выбор", "ценности"],
+        "uk": ["кохання", "гармонія", "стосунки", "вибір", "цінності"]
+      },
+      "suit": null, "number": 6, "arcana": "major"
+    },
+    {
+      "id": 7,
+      "names": {"en": "The Chariot", "ru": "Колесница", "uk": "Колісниця"},
+      "meanings": {
+        "en": {"upright": "Control, willpower, success, action, determination, victory"},
+        "ru": {"upright": "Контроль, сила воли, успех, действие, решимость, победа"},
+        "uk": {"upright": "Контроль, сила волі, успіх, дія, рішучість, перемога"}
+      },
+      "keywords": {
+        "en": ["willpower", "determination", "victory", "control", "success"],
+        "ru": ["сила воли", "решимость", "победа", "контроль", "успех"],
+        "uk": ["сила волі", "рішучість", "перемога", "контроль", "успіх"]
+      },
+      "suit": null, "number": 7, "arcana": "major"
+    },
+    {
+      "id": 8,
+      "names": {"en": "Strength", "ru": "Сила", "uk": "Сила"},
+      "meanings": {
+        "en": {"upright": "Inner strength, courage, compassion, influence, persuasion, patience"},
+        "ru": {"upright": "Внутренняя сила, храбрость, сострадание, влияние, убеждение, терпение"},
+        "uk": {"upright": "Внутрішня сила, мужність, співчуття, вплив, переконання, терпіння"}
+      },
+      "keywords": {
+        "en": ["courage", "patience", "compassion", "inner strength", "control"],
+        "ru": ["храбрость", "терпение", "сострадание", "внутренняя сила", "контроль"],
+        "uk": ["мужність", "терпіння", "співчуття", "внутрішня сила", "контроль"]
+      },
+      "suit": null, "number": 8, "arcana": "major"
+    },
+    {
+      "id": 9,
+      "names": {"en": "The Hermit", "ru": "Отшельник", "uk": "Відлюдник"},
+      "meanings": {
+        "en": {"upright": "Soul searching, introspection, inner guidance, solitude, wisdom"},
+        "ru": {"upright": "Поиск души, самоанализ, внутреннее руководство, одиночество, мудрость"},
+        "uk": {"upright": "Пошук душі, самоаналіз, внутрішнє керівництво, самотність, мудрість"}
+      },
+      "keywords": {
+        "en": ["introspection", "solitude", "wisdom", "inner guidance", "reflection"],
+        "ru": ["самоанализ", "одиночество", "мудрость", "внутреннее руководство", "размышление"],
+        "uk": ["самоаналіз", "самотність", "мудрість", "внутрішнє керівництво", "роздуми"]
+      },
+      "suit": null, "number": 9, "arcana": "major"
+    },
+    {
+      "id": 10,
+      "names": {"en": "Wheel of Fortune", "ru": "Колесо Фортуны", "uk": "Колесо Фортуни"},
+      "meanings": {
+        "en": {"upright": "Good luck, karma, life cycles, destiny, turning point, change"},
+        "ru": {"upright": "Удача, карма, жизненные циклы, судьба, поворотный момент, перемены"},
+        "uk": {"upright": "Удача, карма, життєві цикли, доля, поворотний момент, зміни"}
+      },
+      "keywords": {
+        "en": ["luck", "cycles", "destiny", "change", "karma"],
+        "ru": ["удача", "циклы", "судьба", "перемены", "карма"],
+        "uk": ["удача", "цикли", "доля", "зміни", "карма"]
+      },
+      "suit": null, "number": 10, "arcana": "major"
+    },
+    {
+      "id": 11,
+      "names": {"en": "Justice", "ru": "Справедливость", "uk": "Справедливість"},
+      "meanings": {
+        "en": {"upright": "Justice, fairness, truth, cause and effect, law, accountability"},
+        "ru": {"upright": "Справедливость, честность, правда, причина и следствие, закон, ответственность"},
+        "uk": {"upright": "Справедливість, чесність, правда, причина і наслідок, закон, відповідальність"}
+      },
+      "keywords": {
+        "en": ["justice", "fairness", "truth", "law", "accountability"],
+        "ru": ["справедливость", "честность", "правда", "закон", "ответственность"],
+        "uk": ["справедливість", "чесність", "правда", "закон", "відповідальність"]
+      },
+      "suit": null, "number": 11, "arcana": "major"
+    },
+    {
+      "id": 12,
+      "names": {"en": "The Hanged Man", "ru": "Повешенный", "uk": "Повішений"},
+      "meanings": {
+        "en": {"upright": "Pause, surrender, letting go, new perspectives, sacrifice"},
+        "ru": {"upright": "Пауза, капитуляция, отпускание, новые перспективы, жертва"},
+        "uk": {"upright": "Пауза, капітуляція, відпускання, нові перспективи, жертва"}
+      },
+      "keywords": {
+        "en": ["surrender", "letting go", "sacrifice", "perspective", "pause"],
+        "ru": ["капитуляция", "отпускание", "жертва", "перспектива", "пауза"],
+        "uk": ["капітуляція", "відпускання", "жертва", "перспектива", "пауза"]
+      },
+      "suit": null, "number": 12, "arcana": "major"
+    },
+    {
+      "id": 13,
+      "names": {"en": "Death", "ru": "Смерть", "uk": "Смерть"},
+      "meanings": {
+        "en": {"upright": "Endings, transformation, transition, letting go, release, change"},
+        "ru": {"upright": "Окончания, трансформация, переход, отпускание, освобождение, перемены"},
+        "uk": {"upright": "Закінчення, трансформація, перехід, відпускання, визволення, зміни"}
+      },
+      "keywords": {
+        "en": ["transformation", "endings", "change", "transition", "release"],
+        "ru": ["трансформация", "окончания", "перемены", "переход", "освобождение"],
+        "uk": ["трансформація", "закінчення", "зміни", "перехід", "визволення"]
+      },
+      "suit": null, "number": 13, "arcana": "major"
+    },
+    {
+      "id": 14,
+      "names": {"en": "Temperance", "ru": "Умеренность", "uk": "Поміркованість"},
+      "meanings": {
+        "en": {"upright": "Balance, moderation, patience, purpose, meaning, harmony"},
+        "ru": {"upright": "Баланс, умеренность, терпение, цель, смысл, гармония"},
+        "uk": {"upright": "Баланс, поміркованість, терпіння, мета, сенс, гармонія"}
+      },
+      "keywords": {
+        "en": ["balance", "moderation", "patience", "harmony", "purpose"],
+        "ru": ["баланс", "умеренность", "терпение", "гармония", "цель"],
+        "uk": ["баланс", "поміркованість", "терпіння", "гармонія", "мета"]
+      },
+      "suit": null, "number": 14, "arcana": "major"
+    },
+    {
+      "id": 15,
+      "names": {"en": "The Devil", "ru": "Дьявол", "uk": "Диявол"},
+      "meanings": {
+        "en": {"upright": "Shadow self, attachment, addiction, restriction, sexuality, materialism"},
+        "ru": {"upright": "Теневая сторона, привязанность, зависимость, ограничение, сексуальность, материализм"},
+        "uk": {"upright": "Тіньова сторона, прив'язаність, залежність, обмеження, сексуальність, матеріалізм"}
+      },
+      "keywords": {
+        "en": ["addiction", "materialism", "restriction", "attachment", "sexuality"],
+        "ru": ["зависимость", "материализм", "ограничение", "привязанность", "сексуальность"],
+        "uk": ["залежність", "матеріалізм", "обмеження", "прив'язаність", "сексуальність"]
+      },
+      "suit": null, "number": 15, "arcana": "major"
+    },
+    {
+      "id": 16,
+      "names": {"en": "The Tower", "ru": "Башня", "uk": "Вежа"},
+      "meanings": {
+        "en": {"upright": "Sudden change, upheaval, chaos, revelation, awakening, disruption"},
+        "ru": {"upright": "Внезапные перемены, потрясение, хаос, откровение, пробуждение, разрушение"},
+        "uk": {"upright": "Раптові зміни, потрясіння, хаос, одкровення, пробудження, руйнування"}
+      },
+      "keywords": {
+        "en": ["upheaval", "revelation", "disruption", "sudden change", "awakening"],
+        "ru": ["потрясение", "откровение", "разрушение", "внезапная перемена", "пробуждение"],
+        "uk": ["потрясіння", "одкровення", "руйнування", "раптова зміна", "пробудження"]
+      },
+      "suit": null, "number": 16, "arcana": "major"
+    },
+    {
+      "id": 17,
+      "names": {"en": "The Star", "ru": "Звезда", "uk": "Зірка"},
+      "meanings": {
+        "en": {"upright": "Hope, faith, purpose, renewal, spirituality, inspiration"},
+        "ru": {"upright": "Надежда, вера, цель, обновление, духовность, вдохновение"},
+        "uk": {"upright": "Надія, віра, мета, оновлення, духовність, натхнення"}
+      },
+      "keywords": {
+        "en": ["hope", "faith", "inspiration", "renewal", "serenity"],
+        "ru": ["надежда", "вера", "вдохновение", "обновление", "спокойствие"],
+        "uk": ["надія", "віра", "натхнення", "оновлення", "спокій"]
+      },
+      "suit": null, "number": 17, "arcana": "major"
+    },
+    {
+      "id": 18,
+      "names": {"en": "The Moon", "ru": "Луна", "uk": "Місяць"},
+      "meanings": {
+        "en": {"upright": "Illusion, fear, anxiety, subconscious, intuition, mystery"},
+        "ru": {"upright": "Иллюзия, страх, тревога, подсознание, интуиция, тайна"},
+        "uk": {"upright": "Ілюзія, страх, тривога, підсвідомість, інтуїція, таємниця"}
+      },
+      "keywords": {
+        "en": ["illusion", "intuition", "mystery", "subconscious", "fear"],
+        "ru": ["иллюзия", "интуиция", "тайна", "подсознание", "страх"],
+        "uk": ["ілюзія", "інтуїція", "таємниця", "підсвідомість", "страх"]
+      },
+      "suit": null, "number": 18, "arcana": "major"
+    },
+    {
+      "id": 19,
+      "names": {"en": "The Sun", "ru": "Солнце", "uk": "Сонце"},
+      "meanings": {
+        "en": {"upright": "Positivity, fun, warmth, success, vitality, joy, confidence"},
+        "ru": {"upright": "Позитивность, веселье, тепло, успех, жизненность, радость, уверенность"},
+        "uk": {"upright": "Позитивність, веселощі, тепло, успіх, життєвість, радість, впевненість"}
+      },
+      "keywords": {
+        "en": ["success", "joy", "vitality", "confidence", "happiness"],
+        "ru": ["успех", "радость", "жизненность", "уверенность", "счастье"],
+        "uk": ["успіх", "радість", "життєвість", "впевненість", "щастя"]
+      },
+      "suit": null, "number": 19, "arcana": "major"
+    },
+    {
+      "id": 20,
+      "names": {"en": "Judgement", "ru": "Суд", "uk": "Суд"},
+      "meanings": {
+        "en": {"upright": "Judgement, rebirth, inner calling, absolution, reflection, evaluation"},
+        "ru": {"upright": "Суждение, возрождение, внутренний зов, прощение, размышление, оценка"},
+        "uk": {"upright": "Судження, відродження, внутрішній заклик, прощення, роздуми, оцінка"}
+      },
+      "keywords": {
+        "en": ["judgement", "rebirth", "reflection", "evaluation", "calling"],
+        "ru": ["суждение", "возрождение", "размышление", "оценка", "призвание"],
+        "uk": ["судження", "відродження", "роздуми", "оцінка", "покликання"]
+      },
+      "suit": null, "number": 20, "arcana": "major"
+    },
+    {
+      "id": 21,
+      "names": {"en": "The World", "ru": "Мир", "uk": "Світ"},
+      "meanings": {
+        "en": {"upright": "Completion, accomplishment, travel, fulfillment, success, wholeness"},
+        "ru": {"upright": "Завершение, достижение, путешествие, исполнение, успех, целостность"},
+        "uk": {"upright": "Завершення, досягнення, подорож, виконання, успіх, цілісність"}
+      },
+      "keywords": {
+        "en": ["completion", "success", "wholeness", "accomplishment", "fulfillment"],
+        "ru": ["завершение", "успех", "целостность", "достижение", "исполнение"],
+        "uk": ["завершення", "успіх", "цілісність", "досягнення", "виконання"]
+      },
+      "suit": null, "number": 21, "arcana": "major"
+    }
+  ],
+  "minor_arcana": {
+    "wands": [
+      {
+        "id": 22,
+        "names": {"en": "Ace of Wands", "ru": "Туз Жезлов", "uk": "Туз Жезлів"},
+        "meanings": {
+          "en": {"upright": "Inspiration, new opportunities, growth, potential, creative spark"},
+          "ru": {"upright": "Вдохновение, новые возможности, рост, потенциал, творческая искра"},
+          "uk": {"upright": "Натхнення, нові можливості, зростання, потенціал, творча іскра"}
+        },
+        "keywords": {
+          "en": ["inspiration", "opportunity", "growth", "potential", "creativity"],
+          "ru": ["вдохновение", "возможность", "рост", "потенциал", "творчество"],
+          "uk": ["натхнення", "можливість", "зростання", "потенціал", "творчість"]
+        },
+        "suit": "wands", "number": 1, "arcana": "minor"
+      },
+      {
+        "id": 23,
+        "names": {"en": "Two of Wands", "ru": "Двойка Жезлов", "uk": "Двійка Жезлів"},
+        "meanings": {
+          "en": {"upright": "Future planning, progress, decisions, discovery, personal power"},
+          "ru": {"upright": "Планирование будущего, прогресс, решения, открытия, личная сила"},
+          "uk": {"upright": "Планування майбутнього, прогрес, рішення, відкриття, особиста сила"}
+        },
+        "keywords": {
+          "en": ["planning", "decisions", "progress", "discovery", "options"],
+          "ru": ["планирование", "решения", "прогресс", "открытие", "варианты"],
+          "uk": ["планування", "рішення", "прогрес", "відкриття", "варіанти"]
+        },
+        "suit": "wands", "number": 2, "arcana": "minor"
+      },
+      {
+        "id": 24,
+        "names": {"en": "Three of Wands", "ru": "Тройка Жезлов", "uk": "Трійка Жезлів"},
+        "meanings": {
+          "en": {"upright": "Progress, expansion, foresight, overseas opportunities, long-term planning"},
+          "ru": {"upright": "Прогресс, расширение, предвидение, зарубежные возможности, долгосрочное планирование"},
+          "uk": {"upright": "Прогрес, розширення, передбачення, зарубіжні можливості, довгострокове планування"}
+        },
+        "keywords": {
+          "en": ["expansion", "foresight", "opportunity", "planning", "exploration"],
+          "ru": ["расширение", "предвидение", "возможность", "планирование", "исследование"],
+          "uk": ["розширення", "передбачення", "можливість", "планування", "дослідження"]
+        },
+        "suit": "wands", "number": 3, "arcana": "minor"
+      },
+      {
+        "id": 25,
+        "names": {"en": "Four of Wands", "ru": "Четверка Жезлов", "uk": "Четвірка Жезлів"},
+        "meanings": {
+          "en": {"upright": "Celebration, joy, harmony, relaxation, homecoming, community"},
+          "ru": {"upright": "Празднование, радость, гармония, расслабление, возвращение домой, сообщество"},
+          "uk": {"upright": "Святкування, радість, гармонія, розслаблення, повернення додому, спільнота"}
+        },
+        "keywords": {
+          "en": ["celebration", "harmony", "home", "community", "joy"],
+          "ru": ["празднование", "гармония", "дом", "сообщество", "радость"],
+          "uk": ["святкування", "гармонія", "дім", "спільнота", "радість"]
+        },
+        "suit": "wands", "number": 4, "arcana": "minor"
+      },
+      {
+        "id": 26,
+        "names": {"en": "Five of Wands", "ru": "Пятерка Жезлов", "uk": "П'ятірка Жезлів"},
+        "meanings": {
+          "en": {"upright": "Conflict, competition, tension, diversity, disagreement, struggle"},
+          "ru": {"upright": "Конфликт, конкуренция, напряжение, разнообразие, разногласие, борьба"},
+          "uk": {"upright": "Конфлікт, конкуренція, напруга, різноманітність, розбіжності, боротьба"}
+        },
+        "keywords": {
+          "en": ["conflict", "competition", "tension", "struggle", "disagreement"],
+          "ru": ["конфликт", "конкуренция", "напряжение", "борьба", "разногласие"],
+          "uk": ["конфлікт", "конкуренція", "напруга", "боротьба", "розбіжності"]
+        },
+        "suit": "wands", "number": 5, "arcana": "minor"
+      },
+      {
+        "id": 27,
+        "names": {"en": "Six of Wands", "ru": "Шестерка Жезлов", "uk": "Шістка Жезлів"},
+        "meanings": {
+          "en": {"upright": "Success, public recognition, progress, self-confidence, victory"},
+          "ru": {"upright": "Успех, общественное признание, прогресс, уверенность в себе, победа"},
+          "uk": {"upright": "Успіх, громадське визнання, прогрес, впевненість у собі, перемога"}
+        },
+        "keywords": {
+          "en": ["success", "recognition", "victory", "confidence", "progress"],
+          "ru": ["успех", "признание", "победа", "уверенность", "прогресс"],
+          "uk": ["успіх", "визнання", "перемога", "впевненість", "прогрес"]
+        },
+        "suit": "wands", "number": 6, "arcana": "minor"
+      },
+      {
+        "id": 28,
+        "names": {"en": "Seven of Wands", "ru": "Семерка Жезлов", "uk": "Сімка Жезлів"},
+        "meanings": {
+          "en": {"upright": "Challenge, competition, protection, perseverance, standing your ground"},
+          "ru": {"upright": "Вызов, конкуренция, защита, настойчивость, отстаивание своей позиции"},
+          "uk": {"upright": "Виклик, конкуренція, захист, наполегливість, відстоювання своєї позиції"}
+        },
+        "keywords": {
+          "en": ["challenge", "perseverance", "defense", "courage", "determination"],
+          "ru": ["вызов", "настойчивость", "защита", "храбрость", "решимость"],
+          "uk": ["виклик", "наполегливість", "захист", "мужність", "рішучість"]
+        },
+        "suit": "wands", "number": 7, "arcana": "minor"
+      },
+      {
+        "id": 29,
+        "names": {"en": "Eight of Wands", "ru": "Восьмерка Жезлов", "uk": "Вісімка Жезлів"},
+        "meanings": {
+          "en": {"upright": "Speed, action, movement, quick decisions, swift change, progress"},
+          "ru": {"upright": "Скорость, действие, движение, быстрые решения, стремительные перемены, прогресс"},
+          "uk": {"upright": "Швидкість, дія, рух, швидкі рішення, стрімкі зміни, прогрес"}
+        },
+        "keywords": {
+          "en": ["speed", "action", "movement", "progress", "swift change"],
+          "ru": ["скорость", "действие", "движение", "прогресс", "стремительные перемены"],
+          "uk": ["швидкість", "дія", "рух", "прогрес", "стрімкі зміни"]
+        },
+        "suit": "wands", "number": 8, "arcana": "minor"
+      },
+      {
+        "id": 30,
+        "names": {"en": "Nine of Wands", "ru": "Девятка Жезлов", "uk": "Дев'ятка Жезлів"},
+        "meanings": {
+          "en": {"upright": "Resilience, courage, persistence, boundaries, last stand, defense"},
+          "ru": {"upright": "Устойчивость, храбрость, настойчивость, границы, последний рубеж, защита"},
+          "uk": {"upright": "Стійкість, мужність, наполегливість, межі, останній рубіж, захист"}
+        },
+        "keywords": {
+          "en": ["resilience", "persistence", "courage", "boundaries", "defense"],
+          "ru": ["устойчивость", "настойчивость", "храбрость", "границы", "защита"],
+          "uk": ["стійкість", "наполегливість", "мужність", "межі", "захист"]
+        },
+        "suit": "wands", "number": 9, "arcana": "minor"
+      },
+      {
+        "id": 31,
+        "names": {"en": "Ten of Wands", "ru": "Десятка Жезлов", "uk": "Десятка Жезлів"},
+        "meanings": {
+          "en": {"upright": "Burden, responsibility, hard work, stress, obligation, accomplishment"},
+          "ru": {"upright": "Бремя, ответственность, тяжелый труд, стресс, обязательство, достижение"},
+          "uk": {"upright": "Тягар, відповідальність, важка праця, стрес, зобов'язання, досягнення"}
+        },
+        "keywords": {
+          "en": ["burden", "responsibility", "hard work", "stress", "obligation"],
+          "ru": ["бремя", "ответственность", "тяжелый труд", "стресс", "обязательство"],
+          "uk": ["тягар", "відповідальність", "важка праця", "стрес", "зобов'язання"]
+        },
+        "suit": "wands", "number": 10, "arcana": "minor"
+      },
+      {
+        "id": 32,
+        "names": {"en": "Page of Wands", "ru": "Паж Жезлов", "uk": "Паж Жезлів"},
+        "meanings": {
+          "en": {"upright": "Inspiration, ideas, discovery, limitless potential, free spirit, enthusiasm"},
+          "ru": {"upright": "Вдохновение, идеи, открытия, безграничный потенциал, свободный дух, энтузиазм"},
+          "uk": {"upright": "Натхнення, ідеї, відкриття, безмежний потенціал, вільний дух, ентузіазм"}
+        },
+        "keywords": {
+          "en": ["enthusiasm", "exploration", "discovery", "free spirit", "inspiration"],
+          "ru": ["энтузиазм", "исследование", "открытие", "свободный дух", "вдохновение"],
+          "uk": ["ентузіазм", "дослідження", "відкриття", "вільний дух", "натхнення"]
+        },
+        "suit": "wands", "number": 11, "arcana": "minor"
+      },
+      {
+        "id": 33,
+        "names": {"en": "Knight of Wands", "ru": "Рыцарь Жезлов", "uk": "Лицар Жезлів"},
+        "meanings": {
+          "en": {"upright": "Energy, passion, adventure, impulsiveness, action-oriented, daring"},
+          "ru": {"upright": "Энергия, страсть, приключение, импульсивность, ориентация на действие, смелость"},
+          "uk": {"upright": "Енергія, пристрасть, пригода, імпульсивність, орієнтація на дію, сміливість"}
+        },
+        "keywords": {
+          "en": ["energy", "passion", "adventure", "impulsiveness", "action"],
+          "ru": ["энергия", "страсть", "приключение", "импульсивность", "действие"],
+          "uk": ["енергія", "пристрасть", "пригода", "імпульсивність", "дія"]
+        },
+        "suit": "wands", "number": 12, "arcana": "minor"
+      },
+      {
+        "id": 34,
+        "names": {"en": "Queen of Wands", "ru": "Королева Жезлов", "uk": "Королева Жезлів"},
+        "meanings": {
+          "en": {"upright": "Courage, confidence, independence, social butterfly, determination, charisma"},
+          "ru": {"upright": "Храбрость, уверенность, независимость, душа компании, решимость, харизма"},
+          "uk": {"upright": "Мужність, впевненість, незалежність, душа компанії, рішучість, харизма"}
+        },
+        "keywords": {
+          "en": ["confidence", "courage", "determination", "independence", "charisma"],
+          "ru": ["уверенность", "храбрость", "решимость", "независимость", "харизма"],
+          "uk": ["впевненість", "мужність", "рішучість", "незалежність", "харизма"]
+        },
+        "suit": "wands", "number": 13, "arcana": "minor"
+      },
+      {
+        "id": 35,
+        "names": {"en": "King of Wands", "ru": "Король Жезлов", "uk": "Король Жезлів"},
+        "meanings": {
+          "en": {"upright": "Natural leader, vision, entrepreneur, honor, charismatic, bold"},
+          "ru": {"upright": "Прирожденный лидер, видение, предприниматель, честь, харизматичный, смелый"},
+          "uk": {"upright": "Природжений лідер, бачення, підприємець, честь, харизматичний, сміливий"}
+        },
+        "keywords": {
+          "en": ["leadership", "vision", "entrepreneurship", "honor", "boldness"],
+          "ru": ["лидерство", "видение", "предпринимательство", "честь", "смелость"],
+          "uk": ["лідерство", "бачення", "підприємництво", "честь", "сміливість"]
+        },
+        "suit": "wands", "number": 14, "arcana": "minor"
+      }
+    ],
+    "cups": [
+      {
+        "id": 36,
+        "names": {"en": "Ace of Cups", "ru": "Туз Кубков", "uk": "Туз Кубків"},
+        "meanings": {
+          "en": {"upright": "Love, new relationships, compassion, creativity, emotional awakening"},
+          "ru": {"upright": "Любовь, новые отношения, сострадание, творчество, эмоциональное пробуждение"},
+          "uk": {"upright": "Кохання, нові стосунки, співчуття, творчість, емоційне пробудження"}
+        },
+        "keywords": {
+          "en": ["love", "new feelings", "compassion", "creativity", "emotion"],
+          "ru": ["любовь", "новые чувства", "сострадание", "творчество", "эмоция"],
+          "uk": ["кохання", "нові почуття", "співчуття", "творчість", "емоція"]
+        },
+        "suit": "cups", "number": 1, "arcana": "minor"
+      },
+      {
+        "id": 37,
+        "names": {"en": "Two of Cups", "ru": "Двойка Кубков", "uk": "Двійка Кубків"},
+        "meanings": {
+          "en": {"upright": "Unified love, partnership, mutual attraction, connection, relationships"},
+          "ru": {"upright": "Единая любовь, партнёрство, взаимное притяжение, связь, отношения"},
+          "uk": {"upright": "Єдине кохання, партнерство, взаємне тяжіння, зв'язок, стосунки"}
+        },
+        "keywords": {
+          "en": ["partnership", "love", "unity", "connection", "attraction"],
+          "ru": ["партнёрство", "любовь", "единство", "связь", "притяжение"],
+          "uk": ["партнерство", "кохання", "єдність", "зв'язок", "тяжіння"]
+        },
+        "suit": "cups", "number": 2, "arcana": "minor"
+      },
+      {
+        "id": 38,
+        "names": {"en": "Three of Cups", "ru": "Тройка Кубков", "uk": "Трійка Кубків"},
+        "meanings": {
+          "en": {"upright": "Celebration, friendship, creativity, collaboration, community, joy"},
+          "ru": {"upright": "Празднование, дружба, творчество, сотрудничество, сообщество, радость"},
+          "uk": {"upright": "Святкування, дружба, творчість, співпраця, спільнота, радість"}
+        },
+        "keywords": {
+          "en": ["celebration", "friendship", "community", "gatherings", "happiness"],
+          "ru": ["празднование", "дружба", "сообщество", "встречи", "счастье"],
+          "uk": ["святкування", "дружба", "спільнота", "зустрічі", "щастя"]
+        },
+        "suit": "cups", "number": 3, "arcana": "minor"
+      },
+      {
+        "id": 39,
+        "names": {"en": "Four of Cups", "ru": "Четверка Кубков", "uk": "Четвірка Кубків"},
+        "meanings": {
+          "en": {"upright": "Meditation, contemplation, apathy, reevaluation, missed opportunities"},
+          "ru": {"upright": "Медитация, размышление, апатия, переоценка, упущенные возможности"},
+          "uk": {"upright": "Медитація, роздуми, апатія, переоцінка, втрачені можливості"}
+        },
+        "keywords": {
+          "en": ["contemplation", "apathy", "reevaluation", "meditation", "discontent"],
+          "ru": ["размышление", "апатия", "переоценка", "медитация", "недовольство"],
+          "uk": ["роздуми", "апатія", "переоцінка", "медитація", "невдоволення"]
+        },
+        "suit": "cups", "number": 4, "arcana": "minor"
+      },
+      {
+        "id": 40,
+        "names": {"en": "Five of Cups", "ru": "Пятерка Кубков", "uk": "П'ятірка Кубків"},
+        "meanings": {
+          "en": {"upright": "Regret, failure, disappointment, pessimism, loss, grief"},
+          "ru": {"upright": "Сожаление, неудача, разочарование, пессимизм, потеря, горе"},
+          "uk": {"upright": "Жаль, невдача, розчарування, песимізм, втрата, горе"}
+        },
+        "keywords": {
+          "en": ["regret", "loss", "disappointment", "grief", "pessimism"],
+          "ru": ["сожаление", "потеря", "разочарование", "горе", "пессимизм"],
+          "uk": ["жаль", "втрата", "розчарування", "горе", "песимізм"]
+        },
+        "suit": "cups", "number": 5, "arcana": "minor"
+      },
+      {
+        "id": 41,
+        "names": {"en": "Six of Cups", "ru": "Шестерка Кубков", "uk": "Шістка Кубків"},
+        "meanings": {
+          "en": {"upright": "Revisiting the past, childhood memories, innocence, nostalgia, joy"},
+          "ru": {"upright": "Возвращение к прошлому, детские воспоминания, невинность, ностальгия, радость"},
+          "uk": {"upright": "Повернення до минулого, дитячі спогади, невинність, ностальгія, радість"}
+        },
+        "keywords": {
+          "en": ["nostalgia", "memories", "childhood", "innocence", "past"],
+          "ru": ["ностальгия", "воспоминания", "детство", "невинность", "прошлое"],
+          "uk": ["ностальгія", "спогади", "дитинство", "невинність", "минуле"]
+        },
+        "suit": "cups", "number": 6, "arcana": "minor"
+      },
+      {
+        "id": 42,
+        "names": {"en": "Seven of Cups", "ru": "Семерка Кубков", "uk": "Сімка Кубків"},
+        "meanings": {
+          "en": {"upright": "Opportunities, choices, wishful thinking, illusion, fantasy, options"},
+          "ru": {"upright": "Возможности, выбор, выдача желаемого за действительное, иллюзия, фантазия, варианты"},
+          "uk": {"upright": "Можливості, вибір, прийняття бажаного за дійсне, ілюзія, фантазія, варіанти"}
+        },
+        "keywords": {
+          "en": ["choices", "illusion", "fantasy", "opportunities", "wishful thinking"],
+          "ru": ["выбор", "иллюзия", "фантазия", "возможности", "выдача желаемого за действительное"],
+          "uk": ["вибір", "ілюзія", "фантазія", "можливості", "прийняття бажаного за дійсне"]
+        },
+        "suit": "cups", "number": 7, "arcana": "minor"
+      },
+      {
+        "id": 43,
+        "names": {"en": "Eight of Cups", "ru": "Восьмерка Кубков", "uk": "Вісімка Кубків"},
+        "meanings": {
+          "en": {"upright": "Disappointment, abandonment, withdrawal, escapism, seeking deeper meaning"},
+          "ru": {"upright": "Разочарование, оставление, уход, эскапизм, поиск более глубокого смысла"},
+          "uk": {"upright": "Розчарування, залишення, відхід, ескапізм, пошук глибшого сенсу"}
+        },
+        "keywords": {
+          "en": ["disappointment", "abandonment", "withdrawal", "escapism", "search"],
+          "ru": ["разочарование", "оставление", "уход", "эскапизм", "поиск"],
+          "uk": ["розчарування", "залишення", "відхід", "ескапізм", "пошук"]
+        },
+        "suit": "cups", "number": 8, "arcana": "minor"
+      },
+      {
+        "id": 44,
+        "names": {"en": "Nine of Cups", "ru": "Девятка Кубков", "uk": "Дев'ятка Кубків"},
+        "meanings": {
+          "en": {"upright": "Contentment, satisfaction, gratitude, wish come true, happiness"},
+          "ru": {"upright": "Удовлетворённость, удовлетворение, благодарность, исполнение желания, счастье"},
+          "uk": {"upright": "Задоволення, задоволеність, вдячність, здійснення бажання, щастя"}
+        },
+        "keywords": {
+          "en": ["satisfaction", "contentment", "wishes", "gratitude", "happiness"],
+          "ru": ["удовлетворение", "удовлетворённость", "желания", "благодарность", "счастье"],
+          "uk": ["задоволення", "задоволеність", "бажання", "вдячність", "щастя"]
+        },
+        "suit": "cups", "number": 9, "arcana": "minor"
+      },
+      {
+        "id": 45,
+        "names": {"en": "Ten of Cups", "ru": "Десятка Кубков", "uk": "Десятка Кубків"},
+        "meanings": {
+          "en": {"upright": "Divine love, blissful relationships, harmony, alignment, family, happiness"},
+          "ru": {"upright": "Божественная любовь, блаженные отношения, гармония, согласие, семья, счастье"},
+          "uk": {"upright": "Божественне кохання, блаженні стосунки, гармонія, згода, сім'я, щастя"}
+        },
+        "keywords": {
+          "en": ["harmony", "happiness", "family", "alignment", "love"],
+          "ru": ["гармония", "счастье", "семья", "согласие", "любовь"],
+          "uk": ["гармонія", "щастя", "сім'я", "згода", "кохання"]
+        },
+        "suit": "cups", "number": 10, "arcana": "minor"
+      },
+      {
+        "id": 46,
+        "names": {"en": "Page of Cups", "ru": "Паж Кубков", "uk": "Паж Кубків"},
+        "meanings": {
+          "en": {"upright": "Creative opportunities, intuitive messages, curiosity, gentle, playful"},
+          "ru": {"upright": "Творческие возможности, интуитивные сообщения, любопытство, нежность, игривость"},
+          "uk": {"upright": "Творчі можливості, інтуїтивні повідомлення, цікавість, ніжність, грайливість"}
+        },
+        "keywords": {
+          "en": ["creativity", "intuition", "curiosity", "gentleness", "playfulness"],
+          "ru": ["творчество", "интуиция", "любопытство", "нежность", "игривость"],
+          "uk": ["творчість", "інтуїція", "цікавість", "ніжність", "грайливість"]
+        },
+        "suit": "cups", "number": 11, "arcana": "minor"
+      },
+      {
+        "id": 47,
+        "names": {"en": "Knight of Cups", "ru": "Рыцарь Кубков", "uk": "Лицар Кубків"},
+        "meanings": {
+          "en": {"upright": "Romance, charm, imagination, beauty, artist, idealist, dreamer"},
+          "ru": {"upright": "Романтика, очарование, воображение, красота, художник, идеалист, мечтатель"},
+          "uk": {"upright": "Романтика, чарівність, уява, краса, художник, ідеаліст, мрійник"}
+        },
+        "keywords": {
+          "en": ["romance", "charm", "imagination", "idealism", "beauty"],
+          "ru": ["романтика", "очарование", "воображение", "идеализм", "красота"],
+          "uk": ["романтика", "чарівність", "уява", "ідеалізм", "краса"]
+        },
+        "suit": "cups", "number": 12, "arcana": "minor"
+      },
+      {
+        "id": 48,
+        "names": {"en": "Queen of Cups", "ru": "Королева Кубков", "uk": "Королева Кубків"},
+        "meanings": {
+          "en": {"upright": "Compassionate, caring, emotionally stable, intuitive, in flow"},
+          "ru": {"upright": "Сострадательная, заботливая, эмоционально стабильная, интуитивная, в потоке"},
+          "uk": {"upright": "Співчутлива, турботлива, емоційно стабільна, інтуїтивна, в потоці"}
+        },
+        "keywords": {
+          "en": ["compassion", "caring", "emotional stability", "intuition", "flow"],
+          "ru": ["сострадание", "забота", "эмоциональная стабильность", "интуиция", "поток"],
+          "uk": ["співчуття", "турбота", "емоційна стабільність", "інтуїція", "потік"]
+        },
+        "suit": "cups", "number": 13, "arcana": "minor"
+      },
+      {
+        "id": 49,
+        "names": {"en": "King of Cups", "ru": "Король Кубков", "uk": "Король Кубків"},
+        "meanings": {
+          "en": {"upright": "Emotionally balanced, compassionate, diplomatic, calm, mature"},
+          "ru": {"upright": "Эмоционально уравновешенный, сострадательный, дипломатичный, спокойный, зрелый"},
+          "uk": {"upright": "Емоційно врівноважений, співчутливий, дипломатичний, спокійний, зрілий"}
+        },
+        "keywords": {
+          "en": ["emotional balance", "compassion", "diplomacy", "calmness", "maturity"],
+          "ru": ["эмоциональное равновесие", "сострадание", "дипломатия", "спокойствие", "зрелость"],
+          "uk": ["емоційна рівновага", "співчуття", "дипломатія", "спокій", "зрілість"]
+        },
+        "suit": "cups", "number": 14, "arcana": "minor"
+      }
+    ],
+    "swords": [
+      {
+        "id": 50,
+        "names": {"en": "Ace of Swords", "ru": "Туз Мечей", "uk": "Туз Мечів"},
+        "meanings": {
+          "en": {"upright": "Breakthroughs, new ideas, mental clarity, success, truth, justice"},
+          "ru": {"upright": "Прорывы, новые идеи, ясность ума, успех, правда, справедливость"},
+          "uk": {"upright": "Прориви, нові ідеї, ясність розуму, успіх, правда, справедливість"}
+        },
+        "keywords": {
+          "en": ["breakthrough", "clarity", "truth", "success", "ideas"],
+          "ru": ["прорыв", "ясность", "правда", "успех", "идеи"],
+          "uk": ["прорив", "ясність", "правда", "успіх", "ідеї"]
+        },
+        "suit": "swords", "number": 1, "arcana": "minor"
+      },
+      {
+        "id": 51,
+        "names": {"en": "Two of Swords", "ru": "Двойка Мечей", "uk": "Двійка Мечів"},
+        "meanings": {
+          "en": {"upright": "Difficult decisions, weighing options, stalemate, avoidance, denial"},
+          "ru": {"upright": "Трудные решения, взвешивание вариантов, тупик, избегание, отрицание"},
+          "uk": {"upright": "Важкі рішення, зважування варіантів, тупик, уникнення, заперечення"}
+        },
+        "keywords": {
+          "en": ["decisions", "stalemate", "avoidance", "choices", "balance"],
+          "ru": ["решения", "тупик", "избегание", "выбор", "баланс"],
+          "uk": ["рішення", "тупик", "уникнення", "вибір", "баланс"]
+        },
+        "suit": "swords", "number": 2, "arcana": "minor"
+      },
+      {
+        "id": 52,
+        "names": {"en": "Three of Swords", "ru": "Тройка Мечей", "uk": "Трійка Мечів"},
+        "meanings": {
+          "en": {"upright": "Heartbreak, emotional pain, sorrow, grief, hurt, separation"},
+          "ru": {"upright": "Разбитое сердце, эмоциональная боль, печаль, горе, боль, разлука"},
+          "uk": {"upright": "Розбите серце, емоційний біль, печаль, горе, біль, розлука"}
+        },
+        "keywords": {
+          "en": ["heartbreak", "pain", "sorrow", "grief", "separation"],
+          "ru": ["разбитое сердце", "боль", "печаль", "горе", "разлука"],
+          "uk": ["розбите серце", "біль", "печаль", "горе", "розлука"]
+        },
+        "suit": "swords", "number": 3, "arcana": "minor"
+      },
+      {
+        "id": 53,
+        "names": {"en": "Four of Swords", "ru": "Четверка Мечей", "uk": "Четвірка Мечів"},
+        "meanings": {
+          "en": {"upright": "Rest, relaxation, meditation, contemplation, recuperation, recovery"},
+          "ru": {"upright": "Отдых, расслабление, медитация, размышление, восстановление, выздоровление"},
+          "uk": {"upright": "Відпочинок, розслаблення, медитація, роздуми, відновлення, одужання"}
+        },
+        "keywords": {
+          "en": ["rest", "relaxation", "meditation", "recuperation", "recovery"],
+          "ru": ["отдых", "расслабление", "медитация", "восстановление", "выздоровление"],
+          "uk": ["відпочинок", "розслаблення", "медитація", "відновлення", "одужання"]
+        },
+        "suit": "swords", "number": 4, "arcana": "minor"
+      },
+      {
+        "id": 54,
+        "names": {"en": "Five of Swords", "ru": "Пятерка Мечей", "uk": "П'ятірка Мечів"},
+        "meanings": {
+          "en": {"upright": "Conflict, disagreements, competition, defeat, winning at all costs"},
+          "ru": {"upright": "Конфликт, разногласия, конкуренция, поражение, победа любой ценой"},
+          "uk": {"upright": "Конфлікт, розбіжності, конкуренція, поразка, перемога будь-якою ціною"}
+        },
+        "keywords": {
+          "en": ["conflict", "defeat", "competition", "disagreement", "winning"],
+          "ru": ["конфликт", "поражение", "конкуренция", "разногласие", "победа"],
+          "uk": ["конфлікт", "поразка", "конкуренція", "розбіжності", "перемога"]
+        },
+        "suit": "swords", "number": 5, "arcana": "minor"
+      },
+      {
+        "id": 55,
+        "names": {"en": "Six of Swords", "ru": "Шестерка Мечей", "uk": "Шістка Мечів"},
+        "meanings": {
+          "en": {"upright": "Transition, change, rite of passage, releasing baggage, moving forward"},
+          "ru": {"upright": "Переход, перемены, обряд перехода, освобождение от багажа, движение вперёд"},
+          "uk": {"upright": "Перехід, зміни, обряд переходу, звільнення від багажу, рух вперед"}
+        },
+        "keywords": {
+          "en": ["transition", "change", "moving forward", "release", "passage"],
+          "ru": ["переход", "перемены", "движение вперёд", "освобождение", "проход"],
+          "uk": ["перехід", "зміни", "рух вперед", "звільнення", "прохід"]
+        },
+        "suit": "swords", "number": 6, "arcana": "minor"
+      },
+      {
+        "id": 56,
+        "names": {"en": "Seven of Swords", "ru": "Семерка Мечей", "uk": "Сімка Мечів"},
+        "meanings": {
+          "en": {"upright": "Betrayal, deception, getting away with something, stealth, cunning"},
+          "ru": {"upright": "Предательство, обман, уход с чем-то, скрытность, хитрость"},
+          "uk": {"upright": "Зрада, обман, відхід з чимось, скритність, хитрість"}
+        },
+        "keywords": {
+          "en": ["betrayal", "deception", "stealth", "cunning", "trickery"],
+          "ru": ["предательство", "обман", "скрытность", "хитрость", "уловка"],
+          "uk": ["зрада", "обман", "скритність", "хитрість", "уловка"]
+        },
+        "suit": "swords", "number": 7, "arcana": "minor"
+      },
+      {
+        "id": 57,
+        "names": {"en": "Eight of Swords", "ru": "Восьмерка Мечей", "uk": "Вісімка Мечів"},
+        "meanings": {
+          "en": {"upright": "Negative thoughts, self-imposed restriction, imprisonment, victim mentality"},
+          "ru": {"upright": "Негативные мысли, самоналоженное ограничение, заключение, менталитет жертвы"},
+          "uk": {"upright": "Негативні думки, самонакладене обмеження, ув'язнення, менталітет жертви"}
+        },
+        "keywords": {
+          "en": ["restriction", "imprisonment", "negative thoughts", "victim", "trapped"],
+          "ru": ["ограничение", "заключение", "негативные мысли", "жертва", "в ловушке"],
+          "uk": ["обмеження", "ув'язнення", "негативні думки", "жертва", "в пастці"]
+        },
+        "suit": "swords", "number": 8, "arcana": "minor"
+      },
+      {
+        "id": 58,
+        "names": {"en": "Nine of Swords", "ru": "Девятка Мечей", "uk": "Дев'ятка Мечів"},
+        "meanings": {
+          "en": {"upright": "Anxiety, worry, fear, depression, nightmares, negative thinking"},
+          "ru": {"upright": "Тревога, беспокойство, страх, депрессия, кошмары, негативное мышление"},
+          "uk": {"upright": "Тривога, занепокоєння, страх, депресія, кошмари, негативне мислення"}
+        },
+        "keywords": {
+          "en": ["anxiety", "worry", "fear", "nightmares", "negative thoughts"],
+          "ru": ["тревога", "беспокойство", "страх", "кошмары", "негативные мысли"],
+          "uk": ["тривога", "занепокоєння", "страх", "кошмари", "негативні думки"]
+        },
+        "suit": "swords", "number": 9, "arcana": "minor"
+      },
+      {
+        "id": 59,
+        "names": {"en": "Ten of Swords", "ru": "Десятка Мечей", "uk": "Десятка Мечів"},
+        "meanings": {
+          "en": {"upright": "Painful endings, deep wounds, betrayal, loss, crisis, rock bottom"},
+          "ru": {"upright": "Болезненные окончания, глубокие раны, предательство, потеря, кризис, дно"},
+          "uk": {"upright": "Болісні закінчення, глибокі рани, зрада, втрата, криза, дно"}
+        },
+        "keywords": {
+          "en": ["painful endings", "betrayal", "crisis", "loss", "rock bottom"],
+          "ru": ["болезненные окончания", "предательство", "кризис", "потеря", "дно"],
+          "uk": ["болісні закінчення", "зрада", "криза", "втрата", "дно"]
+        },
+        "suit": "swords", "number": 10, "arcana": "minor"
+      },
+      {
+        "id": 60,
+        "names": {"en": "Page of Swords", "ru": "Паж Мечей", "uk": "Паж Мечів"},
+        "meanings": {
+          "en": {"upright": "New ideas, curiosity, thirst for knowledge, new ways of communicating"},
+          "ru": {"upright": "Новые идеи, любопытство, жажда знаний, новые способы общения"},
+          "uk": {"upright": "Нові ідеї, цікавість, спрага знань, нові способи спілкування"}
+        },
+        "keywords": {
+          "en": ["curiosity", "ideas", "communication", "learning", "vigilance"],
+          "ru": ["любопытство", "идеи", "общение", "обучение", "бдительность"],
+          "uk": ["цікавість", "ідеї", "спілкування", "навчання", "пильність"]
+        },
+        "suit": "swords", "number": 11, "arcana": "minor"
+      },
+      {
+        "id": 61,
+        "names": {"en": "Knight of Swords", "ru": "Рыцарь Мечей", "uk": "Лицар Мечів"},
+        "meanings": {
+          "en": {"upright": "Ambitious, action-oriented, driven to succeed, fast-thinking, opinionated"},
+          "ru": {"upright": "Амбициозный, ориентированный на действие, стремящийся к успеху, быстро мыслящий, категоричный"},
+          "uk": {"upright": "Амбітний, орієнтований на дію, прагне успіху, швидко мислить, категоричний"}
+        },
+        "keywords": {
+          "en": ["ambition", "action", "fast thinking", "driven", "assertive"],
+          "ru": ["амбиция", "действие", "быстрое мышление", "целеустремлённый", "напористый"],
+          "uk": ["амбіція", "дія", "швидке мислення", "цілеспрямований", "наполегливий"]
+        },
+        "suit": "swords", "number": 12, "arcana": "minor"
+      },
+      {
+        "id": 62,
+        "names": {"en": "Queen of Swords", "ru": "Королева Мечей", "uk": "Королева Мечів"},
+        "meanings": {
+          "en": {"upright": "Independent, unbiased judgement, clear boundaries, direct communication"},
+          "ru": {"upright": "Независимость, беспристрастное суждение, чёткие границы, прямое общение"},
+          "uk": {"upright": "Незалежність, неупереджене судження, чіткі межі, пряме спілкування"}
+        },
+        "keywords": {
+          "en": ["independence", "clarity", "honesty", "boundaries", "intellect"],
+          "ru": ["независимость", "ясность", "честность", "границы", "интеллект"],
+          "uk": ["незалежність", "ясність", "чесність", "межі", "інтелект"]
+        },
+        "suit": "swords", "number": 13, "arcana": "minor"
+      },
+      {
+        "id": 63,
+        "names": {"en": "King of Swords", "ru": "Король Мечей", "uk": "Король Мечів"},
+        "meanings": {
+          "en": {"upright": "Mental clarity, intellectual power, authority, truth, rational thinking"},
+          "ru": {"upright": "Ясность ума, интеллектуальная сила, власть, правда, рациональное мышление"},
+          "uk": {"upright": "Ясність розуму, інтелектуальна сила, влада, правда, раціональне мислення"}
+        },
+        "keywords": {
+          "en": ["clarity", "authority", "truth", "rational", "intellectual"],
+          "ru": ["ясность", "власть", "правда", "рациональный", "интеллектуальный"],
+          "uk": ["ясність", "влада", "правда", "раціональний", "інтелектуальний"]
+        },
+        "suit": "swords", "number": 14, "arcana": "minor"
+      }
+    ],
+    "pentacles": [
+      {
+        "id": 64,
+        "names": {"en": "Ace of Pentacles", "ru": "Туз Пентаклей", "uk": "Туз Пентаклів"},
+        "meanings": {
+          "en": {"upright": "New financial opportunity, prosperity, security, manifestation, abundance"},
+          "ru": {"upright": "Новая финансовая возможность, процветание, безопасность, проявление, изобилие"},
+          "uk": {"upright": "Нова фінансова можливість, процвітання, безпека, прояв, достаток"}
+        },
+        "keywords": {
+          "en": ["opportunity", "prosperity", "abundance", "manifestation", "security"],
+          "ru": ["возможность", "процветание", "изобилие", "проявление", "безопасность"],
+          "uk": ["можливість", "процвітання", "достаток", "прояв", "безпека"]
+        },
+        "suit": "pentacles", "number": 1, "arcana": "minor"
+      },
+      {
+        "id": 65,
+        "names": {"en": "Two of Pentacles", "ru": "Двойка Пентаклей", "uk": "Двійка Пентаклів"},
+        "meanings": {
+          "en": {"upright": "Multiple priorities, time management, prioritization, adaptability, balance"},
+          "ru": {"upright": "Множественные приоритеты, управление временем, приоритизация, адаптивность, баланс"},
+          "uk": {"upright": "Багато пріоритетів, управління часом, пріоритизація, адаптивність, баланс"}
+        },
+        "keywords": {
+          "en": ["balance", "adaptability", "priorities", "time management", "flexibility"],
+          "ru": ["баланс", "адаптивность", "приоритеты", "управление временем", "гибкость"],
+          "uk": ["баланс", "адаптивність", "пріоритети", "управління часом", "гнучкість"]
+        },
+        "suit": "pentacles", "number": 2, "arcana": "minor"
+      },
+      {
+        "id": 66,
+        "names": {"en": "Three of Pentacles", "ru": "Тройка Пентаклей", "uk": "Трійка Пентаклів"},
+        "meanings": {
+          "en": {"upright": "Teamwork, collaboration, learning, implementation, craftsmanship"},
+          "ru": {"upright": "Командная работа, сотрудничество, обучение, реализация, мастерство"},
+          "uk": {"upright": "Командна робота, співпраця, навчання, реалізація, майстерність"}
+        },
+        "keywords": {
+          "en": ["teamwork", "collaboration", "craftsmanship", "learning", "building"],
+          "ru": ["командная работа", "сотрудничество", "мастерство", "обучение", "строительство"],
+          "uk": ["командна робота", "співпраця", "майстерність", "навчання", "будівництво"]
+        },
+        "suit": "pentacles", "number": 3, "arcana": "minor"
+      },
+      {
+        "id": 67,
+        "names": {"en": "Four of Pentacles", "ru": "Четверка Пентаклей", "uk": "Четвірка Пентаклів"},
+        "meanings": {
+          "en": {"upright": "Saving money, security, conservatism, scarcity, control, possessiveness"},
+          "ru": {"upright": "Сбережение денег, безопасность, консерватизм, нехватка, контроль, собственничество"},
+          "uk": {"upright": "Збереження грошей, безпека, консерватизм, нестача, контроль, власницькість"}
+        },
+        "keywords": {
+          "en": ["security", "conservation", "control", "possessiveness", "saving"],
+          "ru": ["безопасность", "сохранение", "контроль", "собственничество", "сбережение"],
+          "uk": ["безпека", "збереження", "контроль", "власницькість", "збереження"]
+        },
+        "suit": "pentacles", "number": 4, "arcana": "minor"
+      },
+      {
+        "id": 68,
+        "names": {"en": "Five of Pentacles", "ru": "Пятерка Пентаклей", "uk": "П'ятірка Пентаклів"},
+        "meanings": {
+          "en": {"upright": "Financial loss, poverty, lack mindset, isolation, worry, hardship"},
+          "ru": {"upright": "Финансовая потеря, бедность, менталитет нехватки, изоляция, беспокойство, трудности"},
+          "uk": {"upright": "Фінансова втрата, бідність, менталітет нестачі, ізоляція, занепокоєння, труднощі"}
+        },
+        "keywords": {
+          "en": ["hardship", "poverty", "loss", "isolation", "worry"],
+          "ru": ["трудности", "бедность", "потеря", "изоляция", "беспокойство"],
+          "uk": ["труднощі", "бідність", "втрата", "ізоляція", "занепокоєння"]
+        },
+        "suit": "pentacles", "number": 5, "arcana": "minor"
+      },
+      {
+        "id": 69,
+        "names": {"en": "Six of Pentacles", "ru": "Шестерка Пентаклей", "uk": "Шістка Пентаклів"},
+        "meanings": {
+          "en": {"upright": "Giving, receiving, sharing wealth, generosity, charity, fairness"},
+          "ru": {"upright": "Дарение, получение, разделение богатства, щедрость, благотворительность, справедливость"},
+          "uk": {"upright": "Дарування, отримання, поділ багатства, щедрість, благодійність, справедливість"}
+        },
+        "keywords": {
+          "en": ["generosity", "charity", "giving", "receiving", "sharing"],
+          "ru": ["щедрость", "благотворительность", "дарение", "получение", "разделение"],
+          "uk": ["щедрість", "благодійність", "дарування", "отримання", "поділ"]
+        },
+        "suit": "pentacles", "number": 6, "arcana": "minor"
+      },
+      {
+        "id": 70,
+        "names": {"en": "Seven of Pentacles", "ru": "Семерка Пентаклей", "uk": "Сімка Пентаклів"},
+        "meanings": {
+          "en": {"upright": "Long-term view, sustainable results, perseverance, investment, patience"},
+          "ru": {"upright": "Долгосрочная перспектива, устойчивые результаты, настойчивость, инвестиция, терпение"},
+          "uk": {"upright": "Довгострокова перспектива, стійкі результати, наполегливість, інвестиція, терпіння"}
+        },
+        "keywords": {
+          "en": ["investment", "patience", "perseverance", "long-term", "sustainability"],
+          "ru": ["инвестиция", "терпение", "настойчивость", "долгосрочный", "устойчивость"],
+          "uk": ["інвестиція", "терпіння", "наполегливість", "довгостроковий", "стійкість"]
+        },
+        "suit": "pentacles", "number": 7, "arcana": "minor"
+      },
+      {
+        "id": 71,
+        "names": {"en": "Eight of Pentacles", "ru": "Восьмерка Пентаклей", "uk": "Вісімка Пентаклів"},
+        "meanings": {
+          "en": {"upright": "Apprenticeship, repetitive tasks, mastery, skill development, hard work"},
+          "ru": {"upright": "Ученичество, повторяющиеся задачи, мастерство, развитие навыков, тяжёлый труд"},
+          "uk": {"upright": "Учнівство, повторювані завдання, майстерність, розвиток навичок, важка праця"}
+        },
+        "keywords": {
+          "en": ["mastery", "skill", "hard work", "dedication", "learning"],
+          "ru": ["мастерство", "навык", "тяжёлый труд", "преданность", "обучение"],
+          "uk": ["майстерність", "навичка", "важка праця", "відданість", "навчання"]
+        },
+        "suit": "pentacles", "number": 8, "arcana": "minor"
+      },
+      {
+        "id": 72,
+        "names": {"en": "Nine of Pentacles", "ru": "Девятка Пентаклей", "uk": "Дев'ятка Пентаклів"},
+        "meanings": {
+          "en": {"upright": "Abundance, luxury, self-sufficiency, financial independence, success"},
+          "ru": {"upright": "Изобилие, роскошь, самодостаточность, финансовая независимость, успех"},
+          "uk": {"upright": "Достаток, розкіш, самодостатність, фінансова незалежність, успіх"}
+        },
+        "keywords": {
+          "en": ["abundance", "luxury", "independence", "success", "self-sufficiency"],
+          "ru": ["изобилие", "роскошь", "независимость", "успех", "самодостаточность"],
+          "uk": ["достаток", "розкіш", "незалежність", "успіх", "самодостатність"]
+        },
+        "suit": "pentacles", "number": 9, "arcana": "minor"
+      },
+      {
+        "id": 73,
+        "names": {"en": "Ten of Pentacles", "ru": "Десятка Пентаклей", "uk": "Десятка Пентаклів"},
+        "meanings": {
+          "en": {"upright": "Wealth, financial security, family, long-term success, legacy"},
+          "ru": {"upright": "Богатство, финансовая безопасность, семья, долгосрочный успех, наследие"},
+          "uk": {"upright": "Багатство, фінансова безпека, сім'я, довготривалий успіх, спадщина"}
+        },
+        "keywords": {
+          "en": ["wealth", "family", "legacy", "stability", "tradition"],
+          "ru": ["богатство", "семья", "наследие", "стабильность", "традиция"],
+          "uk": ["багатство", "сім'я", "спадщина", "стабільність", "традиція"]
+        },
+        "suit": "pentacles", "number": 10, "arcana": "minor"
+      },
+      {
+        "id": 74,
+        "names": {"en": "Page of Pentacles", "ru": "Паж Пентаклей", "uk": "Паж Пентаклів"},
+        "meanings": {
+          "en": {"upright": "Manifestation, financial opportunity, skill development, new venture"},
+          "ru": {"upright": "Проявление, финансовая возможность, развитие навыков, новое предприятие"},
+          "uk": {"upright": "Прояв, фінансова можливість, розвиток навичок, нове підприємство"}
+        },
+        "keywords": {
+          "en": ["opportunity", "manifestation", "learning", "ambition", "new venture"],
+          "ru": ["возможность", "проявление", "обучение", "амбиция", "новое предприятие"],
+          "uk": ["можливість", "прояв", "навчання", "амбіція", "нове підприємство"]
+        },
+        "suit": "pentacles", "number": 11, "arcana": "minor"
+      },
+      {
+        "id": 75,
+        "names": {"en": "Knight of Pentacles", "ru": "Рыцарь Пентаклей", "uk": "Лицар Пентаклів"},
+        "meanings": {
+          "en": {"upright": "Hard work, productivity, routine, conservatism, dedication, reliability"},
+          "ru": {"upright": "Тяжёлый труд, продуктивность, рутина, консерватизм, преданность, надёжность"},
+          "uk": {"upright": "Важка праця, продуктивність, рутина, консерватизм, відданість, надійність"}
+        },
+        "keywords": {
+          "en": ["hard work", "reliability", "dedication", "routine", "productivity"],
+          "ru": ["тяжёлый труд", "надёжность", "преданность", "рутина", "продуктивность"],
+          "uk": ["важка праця", "надійність", "відданість", "рутина", "продуктивність"]
+        },
+        "suit": "pentacles", "number": 12, "arcana": "minor"
+      },
+      {
+        "id": 76,
+        "names": {"en": "Queen of Pentacles", "ru": "Королева Пентаклей", "uk": "Королева Пентаклів"},
+        "meanings": {
+          "en": {"upright": "Nurturing, practical, providing financially, down-to-earth, caring"},
+          "ru": {"upright": "Забота, практичность, финансовое обеспечение, приземлённость, заботливость"},
+          "uk": {"upright": "Турбота, практичність, фінансове забезпечення, приземленість, турботливість"}
+        },
+        "keywords": {
+          "en": ["nurturing", "practical", "provider", "down-to-earth", "caring"],
+          "ru": ["забота", "практичность", "обеспечивающая", "приземлённая", "заботливая"],
+          "uk": ["турбота", "практичність", "забезпечувальна", "приземлена", "турботлива"]
+        },
+        "suit": "pentacles", "number": 13, "arcana": "minor"
+      },
+      {
+        "id": 77,
+        "names": {"en": "King of Pentacles", "ru": "Король Пентаклей", "uk": "Король Пентаклів"},
+        "meanings": {
+          "en": {"upright": "Wealth, business, leadership, security, discipline, abundance, success"},
+          "ru": {"upright": "Богатство, бизнес, лидерство, безопасность, дисциплина, изобилие, успех"},
+          "uk": {"upright": "Багатство, бізнес, лідерство, безпека, дисципліна, достаток, успіх"}
+        },
+        "keywords": {
+          "en": ["wealth", "business", "leadership", "security", "abundance"],
+          "ru": ["богатство", "бизнес", "лидерство", "безопасность", "изобилие"],
+          "uk": ["багатство", "бізнес", "лідерство", "безпека", "достаток"]
+        },
+        "suit": "pentacles", "number": 14, "arcana": "minor"
+      }
+    ]
+  }
+}
