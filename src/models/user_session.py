@@ -9,6 +9,7 @@ class SessionState(Enum):
     """Finite State Machine states for user conversation."""
 
     IDLE = "idle"
+    AWAITING_PAYMENT = "awaiting_payment"
     AWAITING_QUESTION = "awaiting_question"
     AWAITING_CUSTOM_QUESTION = "awaiting_custom_question"
     AWAITING_CARDS = "awaiting_cards"

@@ -6,6 +6,7 @@ from src.i18n.translations import translation_manager
 from src.bot.keyboards import get_main_menu_keyboard
 from src.services.session_service import SessionService
 from src.services.ai_service import AIService
+from src.services.payment_service import payment_service, STARS_PER_READING
 from src.models.user_session import UserSession, SessionState, Reading
 from src.tarot.deck import TarotDeck
 from src.tarot.spreads import create_spread
@@ -83,23 +84,64 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     callback_data = query.data
 
     if callback_data == "action:ask_question":
-        # Transition to AWAITING_QUESTION state
-        session.state = SessionState.AWAITING_QUESTION
+        # Store the reading type and request payment
+        session.conversation_context["reading_type"] = "automated"
+        session.state = SessionState.AWAITING_PAYMENT
         session_service.save_session(session)
 
-        prompt_message = translation_manager.get_message_text("prompt_question", session.language)
-        await query.edit_message_text(prompt_message)
-        logger.info(f"User {user_id} initiated question reading")
+        # Send payment invoice
+        await query.edit_message_text("⏳ Preparing payment invoice...")
+
+        payment_titles = {
+            "en": "🔮 Tarot Reading",
+            "ru": "🔮 Гадание на Таро",
+            "uk": "🔮 Ворожіння на Таро"
+        }
+        payment_descriptions = {
+            "en": f"Get a 3-card Tarot reading with AI-powered interpretation ({STARS_PER_READING} ⭐)",
+            "ru": f"Получите расклад на 3 карты Таро с толкованием от ИИ ({STARS_PER_READING} ⭐)",
+            "uk": f"Отримайте розклад на 3 карти Таро з тлумаченням від ШІ ({STARS_PER_READING} ⭐)"
+        }
+
+        await payment_service.send_invoice(
+            update=update,
+            context=context,
+            title=payment_titles.get(session.language, payment_titles["en"]),
+            description=payment_descriptions.get(session.language, payment_descriptions["en"]),
+            payload=f"reading:automated:{user_id}",
+            language=session.language
+        )
+        logger.info(f"User {user_id} initiated automated reading - payment requested")
 
     elif callback_data == "action:explain_combination":
-        # Transition to AWAITING_CUSTOM_QUESTION state (first ask the question)
-        session.state = SessionState.AWAITING_CUSTOM_QUESTION
+        # Store the reading type and request payment
+        session.conversation_context["reading_type"] = "custom"
+        session.state = SessionState.AWAITING_PAYMENT
         session_service.save_session(session)
 
-        # Ask for their question first
-        prompt_message = translation_manager.get_message_text("prompt_question", session.language)
-        await query.edit_message_text(prompt_message)
-        logger.info(f"User {user_id} initiated custom combination reading")
+        # Send payment invoice
+        await query.edit_message_text("⏳ Preparing payment invoice...")
+
+        payment_titles = {
+            "en": "🔮 Custom Tarot Interpretation",
+            "ru": "🔮 Индивидуальное толкование Таро",
+            "uk": "🔮 Індивідуальне тлумачення Таро"
+        }
+        payment_descriptions = {
+            "en": f"Get interpretation for your own card combination ({STARS_PER_READING} ⭐)",
+            "ru": f"Получите толкование вашей комбинации карт ({STARS_PER_READING} ⭐)",
+            "uk": f"Отримайте тлумачення вашої комбінації карт ({STARS_PER_READING} ⭐)"
+        }
+
+        await payment_service.send_invoice(
+            update=update,
+            context=context,
+            title=payment_titles.get(session.language, payment_titles["en"]),
+            description=payment_descriptions.get(session.language, payment_descriptions["en"]),
+            payload=f"reading:custom:{user_id}",
+            language=session.language
+        )
+        logger.info(f"User {user_id} initiated custom reading - payment requested")
 
 
 async def handle_text_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -425,3 +467,51 @@ def format_custom_reading_response(
     response_parts.append(disclaimer)
 
     return "\n".join(response_parts)
+
+
+async def handle_successful_payment(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """
+    Handle successful payment - transition user to appropriate state.
+
+    After payment is confirmed, move user to the next step of their reading.
+    """
+    user_id = update.effective_user.id
+    session = session_service.get_session(user_id)
+
+    if not session:
+        logger.error(f"No session found for user {user_id} after payment")
+        return
+
+    # Get payment info
+    payment_info = payment_service.extract_payment_info(update)
+    logger.info(f"User {user_id} completed payment: {payment_info}")
+
+    # Get the reading type from session context
+    reading_type = session.conversation_context.get("reading_type", "automated")
+
+    # Thank user for payment
+    thank_you_messages = {
+        "en": "✅ Payment received! Thank you. Now let's proceed with your reading.",
+        "ru": "✅ Платёж получен! Спасибо. Теперь приступим к вашему гаданию.",
+        "uk": "✅ Платіж отримано! Дякуємо. Тепер перейдемо до вашого ворожіння."
+    }
+    await update.message.reply_text(
+        thank_you_messages.get(session.language, thank_you_messages["en"])
+    )
+
+    # Transition to appropriate state based on reading type
+    if reading_type == "automated":
+        session.state = SessionState.AWAITING_QUESTION
+        session_service.save_session(session)
+
+        prompt_message = translation_manager.get_message_text("prompt_question", session.language)
+        await update.message.reply_text(prompt_message)
+        logger.info(f"User {user_id} paid - now awaiting question")
+
+    elif reading_type == "custom":
+        session.state = SessionState.AWAITING_CUSTOM_QUESTION
+        session_service.save_session(session)
+
+        prompt_message = translation_manager.get_message_text("prompt_question", session.language)
+        await update.message.reply_text(prompt_message)
+        logger.info(f"User {user_id} paid - now awaiting custom question")

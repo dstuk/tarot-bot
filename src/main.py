@@ -1,9 +1,10 @@
 """Telegram Tarot Bot - Main entry point."""
 import logging
 import sys
-from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, filters
+from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, PreCheckoutQueryHandler, filters
 from src.config import config
-from src.bot.handlers import start_command, help_command, button_callback, handle_text_message
+from src.bot.handlers import start_command, help_command, button_callback, handle_text_message, handle_successful_payment
+from src.services.payment_service import payment_service
 from src.bot.middleware import rate_limit_middleware
 
 # Configure logging
@@ -43,12 +44,16 @@ def main():
     # Register callback query handler for buttons with rate limiting
     application.add_handler(CallbackQueryHandler(rate_limit_middleware(button_callback)))
 
+    # Register payment handlers (no rate limiting for payment callbacks)
+    application.add_handler(PreCheckoutQueryHandler(payment_service.handle_precheckout))
+    application.add_handler(MessageHandler(filters.SUCCESSFUL_PAYMENT, handle_successful_payment))
+
     # Register message handler for text input with rate limiting
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, rate_limit_middleware(handle_text_message)))
 
     # Start the bot
     logger.info("Bot is ready! Press Ctrl+C to stop.")
-    application.run_polling(allowed_updates=["message", "callback_query"])
+    application.run_polling(allowed_updates=["message", "callback_query", "pre_checkout_query"])
 
 
 if __name__ == "__main__":
