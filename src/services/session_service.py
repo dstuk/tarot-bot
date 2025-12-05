@@ -64,7 +64,8 @@ class RedisSessionStore:
     def set(self, user_id: int, session_data: dict) -> None:
         """Store session data with TTL."""
         key = self._key(user_id)
-        self.redis_client.setex(key, self.ttl_seconds, json.dumps(session_data))
+        # Use ensure_ascii=False to store UTF-8 characters directly (not as \uXXXX)
+        self.redis_client.setex(key, self.ttl_seconds, json.dumps(session_data, ensure_ascii=False))
 
     def delete(self, user_id: int) -> None:
         """Delete session data."""
