@@ -63,6 +63,7 @@ class UserSession:
     state: SessionState = SessionState.IDLE
     last_reading: Optional[Reading] = None
     reading_count: int = 0  # Total number of completed readings
+    reading_history: list[Reading] = field(default_factory=list)  # All past readings
     conversation_context: Dict[str, Any] = field(default_factory=dict)
     created_at: datetime = field(default_factory=datetime.now)
     updated_at: datetime = field(default_factory=datetime.now)
@@ -85,8 +86,13 @@ class UserSession:
     def save_reading(self, reading: Reading) -> None:
         """Save a completed reading to the session."""
         self.last_reading = reading
+        self.reading_history.append(reading)
         self.reading_count += 1
         self.update()
+
+    def get_reading_history(self, limit: int = 10) -> list[Reading]:
+        """Get recent reading history (newest first)."""
+        return list(reversed(self.reading_history[-limit:]))
 
     def is_first_reading(self) -> bool:
         """Check if this is the user's first reading."""
@@ -100,6 +106,7 @@ class UserSession:
             "state": self.state.value,
             "last_reading": self.last_reading.to_dict() if self.last_reading else None,
             "reading_count": self.reading_count,
+            "reading_history": [r.to_dict() for r in self.reading_history],
             "conversation_context": self.conversation_context,
             "created_at": self.created_at.isoformat(),
             "updated_at": self.updated_at.isoformat(),
@@ -108,6 +115,11 @@ class UserSession:
     @classmethod
     def from_dict(cls, data: dict) -> "UserSession":
         """Create UserSession from dictionary."""
+        # Parse reading history
+        reading_history = []
+        for reading_data in data.get("reading_history", []):
+            reading_history.append(Reading.from_dict(reading_data))
+
         return cls(
             user_id=data["user_id"],
             language=data["language"],
@@ -116,6 +128,7 @@ class UserSession:
                 Reading.from_dict(data["last_reading"]) if data["last_reading"] else None
             ),
             reading_count=data.get("reading_count", 0),
+            reading_history=reading_history,
             conversation_context=data.get("conversation_context", {}),
             created_at=datetime.fromisoformat(data["created_at"]),
             updated_at=datetime.fromisoformat(data["updated_at"]),

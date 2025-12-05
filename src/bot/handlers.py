@@ -29,16 +29,22 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
     """
     user_id = update.effective_user.id
 
-    # Reset or create new session
+    # Get existing session or create new one
+    existing_session = session_service.get_session(user_id)
+    has_history = existing_session and existing_session.reading_count > 0
+
+    # Reset session state but preserve history
     session = UserSession(
         user_id=user_id,
-        language="en",  # Default, will be detected from first message
-        state=SessionState.IDLE
+        language=existing_session.language if existing_session else "en",
+        state=SessionState.IDLE,
+        reading_count=existing_session.reading_count if existing_session else 0,
+        reading_history=existing_session.reading_history if existing_session else []
     )
     session_service.save_session(session)
 
-    welcome_message = translation_manager.get_message_text("welcome", "en")
-    keyboard = get_main_menu_keyboard("en")
+    welcome_message = translation_manager.get_message_text("welcome", session.language)
+    keyboard = get_main_menu_keyboard(session.language, show_history=has_history)
 
     await update.message.reply_text(welcome_message, reply_markup=keyboard)
     logger.info(f"User {user_id} started bot session")
@@ -55,9 +61,10 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
     # Use session language if available, otherwise default to English
     language = session.language if session else "en"
+    has_history = session and session.reading_count > 0
 
     help_message = translation_manager.get_message_text("help", language)
-    keyboard = get_main_menu_keyboard(language)
+    keyboard = get_main_menu_keyboard(language, show_history=has_history)
 
     await update.message.reply_text(help_message, reply_markup=keyboard)
     logger.info(f"User {user_id} requested help")
@@ -210,6 +217,64 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
             )
             logger.info(f"User {user_id} initiated custom reading - payment requested")
 
+    elif callback_data == "action:view_history":
+        # Show reading history
+        await handle_view_history(update, session)
+
+
+async def handle_view_history(update: Update, session: UserSession) -> None:
+    """Display user's reading history."""
+    query = update.callback_query
+    user_id = update.effective_user.id
+
+    if session.reading_count == 0:
+        no_history_messages = {
+            "en": "📜 You don't have any readings yet.\n\nClick 'Ask a question' to get your first reading!",
+            "ru": "📜 У вас пока нет гаданий.\n\nНажмите 'Задать вопрос', чтобы получить первое гадание!",
+            "uk": "📜 У вас поки немає ворожінь.\n\nНатисніть 'Поставити питання', щоб отримати перше ворожіння!"
+        }
+        await query.edit_message_text(no_history_messages.get(session.language, no_history_messages["en"]))
+        return
+
+    # Get recent history (last 5 readings)
+    history = session.get_reading_history(limit=5)
+
+    # Format history message
+    history_headers = {
+        "en": f"📜 **Your Reading History** (Last {len(history)} readings)\n\n",
+        "ru": f"📜 **Ваша история гаданий** (Последние {len(history)})\n\n",
+        "uk": f"📜 **Ваша історія ворожінь** (Останні {len(history)})\n\n"
+    }
+
+    message = history_headers.get(session.language, history_headers["en"])
+
+    for i, reading in enumerate(history, 1):
+        date_str = reading.timestamp.strftime("%Y-%m-%d %H:%M")
+        reading_type_labels = {
+            "automated": {"en": "Automated", "ru": "Автоматическое", "uk": "Автоматичне"},
+            "custom": {"en": "Custom", "ru": "Индивидуальное", "uk": "Індивідуальне"}
+        }
+        type_label = reading_type_labels.get(reading.type, {}).get(session.language, reading.type)
+
+        message += f"**{i}. {type_label}** ({date_str})\n"
+        if reading.question:
+            question_labels = {"en": "Question", "ru": "Вопрос", "uk": "Питання"}
+            question_label = question_labels.get(session.language, "Question")
+            message += f"❓ *{question_label}:* {reading.question[:80]}{'...' if len(reading.question) > 80 else ''}\n"
+        message += "\n"
+
+    # Add footer
+    footer_messages = {
+        "en": "_Tap a reading number to view full details (coming soon)_",
+        "ru": "_Нажмите номер гадания для просмотра деталей (скоро)_",
+        "uk": "_Натисніть номер ворожіння для перегляду деталей (незабаром)_"
+    }
+    message += footer_messages.get(session.language, footer_messages["en"])
+
+    keyboard = get_main_menu_keyboard(session.language, show_history=True)
+    await query.edit_message_text(message, reply_markup=keyboard, parse_mode="Markdown")
+    logger.info(f"User {user_id} viewed reading history ({len(history)} readings)")
+
 
 async def handle_text_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """
@@ -314,7 +379,7 @@ async def handle_question_input(update: Update, session: UserSession, question: 
 
         # Delete processing message and send reading
         await processing_msg.delete()
-        keyboard = get_main_menu_keyboard(session.language)
+        keyboard = get_main_menu_keyboard(session.language, show_history=True)  # Always show history after a reading
         await update.message.reply_text(response, reply_markup=keyboard, parse_mode="Markdown")
 
         # T041: Log reading completion
@@ -326,7 +391,7 @@ async def handle_question_input(update: Update, session: UserSession, question: 
 
         await processing_msg.delete()
         error_message = translation_manager.get_error_text("ai_service", session.language)
-        keyboard = get_main_menu_keyboard(session.language)
+        keyboard = get_main_menu_keyboard(session.language, show_history=(session.reading_count > 0))
         await update.message.reply_text(error_message, reply_markup=keyboard)
 
         # Reset session state
@@ -447,7 +512,7 @@ async def handle_cards_input(update: Update, session: UserSession, cards_text: s
 
         # Delete processing message and send reading
         await processing_msg.delete()
-        keyboard = get_main_menu_keyboard(session.language)
+        keyboard = get_main_menu_keyboard(session.language, show_history=True)  # Always show history after a reading
         await update.message.reply_text(response, reply_markup=keyboard, parse_mode="Markdown")
 
         # Log reading completion
@@ -459,7 +524,7 @@ async def handle_cards_input(update: Update, session: UserSession, cards_text: s
 
         await processing_msg.delete()
         error_message = translation_manager.get_error_text("ai_service", session.language)
-        keyboard = get_main_menu_keyboard(session.language)
+        keyboard = get_main_menu_keyboard(session.language, show_history=(session.reading_count > 0))
         await update.message.reply_text(error_message, reply_markup=keyboard)
 
         # Reset session state
