@@ -6,10 +6,16 @@ This bot uses **Telegram Stars** to charge 20 stars per Tarot reading.
 
 ### User Flow:
 1. User clicks "Ask a question" or "Explain my own combination"
-2. Bot sends payment invoice for 20 ⭐ Telegram Stars
-3. User pays using Telegram Stars in-app
-4. Payment is confirmed
-5. Bot proceeds with the reading
+2. **First reading**: FREE trial - skip directly to question input
+3. **Subsequent readings**: Bot sends payment invoice for 20 ⭐ Telegram Stars
+4. User pays using Telegram Stars in-app
+5. Payment is confirmed
+6. Bot proceeds with the reading
+
+### Free Trial:
+- **Every user gets their first reading FREE** 🎁
+- No payment required for the first reading
+- Subsequent readings cost 20 Telegram Stars each
 
 ### Payment States:
 - `AWAITING_PAYMENT` - Waiting for user to complete payment
@@ -20,8 +26,8 @@ This bot uses **Telegram Stars** to charge 20 stars per Tarot reading.
 
 ### Files Modified:
 - **`src/services/payment_service.py`** - New payment service
-- **`src/models/user_session.py`** - Added `AWAITING_PAYMENT` state
-- **`src/bot/handlers.py`** - Updated to request payment before reading
+- **`src/models/user_session.py`** - Added `AWAITING_PAYMENT` state and `reading_count` tracking
+- **`src/bot/handlers.py`** - Updated to check for free trial and request payment
 - **`src/main.py`** - Registered payment handlers
 
 ### Payment Configuration:
@@ -194,11 +200,44 @@ You must provide:
 help_text = """
 🔮 Tarot Bot Help
 
-💫 Pricing: 20 ⭐ per reading
+🎁 First reading: FREE
+💫 Pricing: 20 ⭐ per reading after first
 🔄 Refunds: Within 24h if service fails
 ⚠️ Entertainment only - not financial/medical advice
 📜 Full terms: /terms
 """
+```
+
+## Free Trial Implementation
+
+The bot includes a **free trial feature** where every new user gets their first reading free:
+
+```python
+# In src/models/user_session.py
+def is_first_reading(self) -> bool:
+    """Check if this is the user's first reading."""
+    return self.reading_count == 0
+
+# In src/bot/handlers.py
+if session.is_first_reading():
+    # Skip payment for first reading
+    session.state = SessionState.AWAITING_QUESTION
+    await query.edit_message_text("🎁 Your first reading is FREE! Please ask your question:")
+else:
+    # Request payment for subsequent readings
+    session.state = SessionState.AWAITING_PAYMENT
+    await payment_service.send_invoice(...)
+```
+
+### Disabling Free Trial:
+To disable free trial and charge for all readings, modify `src/bot/handlers.py`:
+
+```python
+# Remove the is_first_reading() check and always request payment:
+if callback_data == "action:ask_question":
+    session.conversation_context["reading_type"] = "automated"
+    session.state = SessionState.AWAITING_PAYMENT
+    # ... send invoice
 ```
 
 ## Future Enhancements
@@ -211,10 +250,10 @@ SUBSCRIPTIONS = {
 }
 ```
 
-### 2. Free Trial:
+### 2. Extended Free Trial:
 ```python
-# Give first reading free
-if user.reading_count == 0:
+# Give first 3 readings free instead of 1
+if user.reading_count < 3:
     proceed_without_payment()
 else:
     request_payment()
@@ -226,7 +265,14 @@ if promo_code == "TAROT50":
     stars_required = STARS_PER_READING * 0.5
 ```
 
-### 4. Gift Readings:
+### 4. Promotional Free Readings:
+```python
+# Give promotional free readings based on events
+if is_special_event():  # e.g., user birthday, holidays
+    proceed_without_payment()
+```
+
+### 5. Gift Readings:
 ```python
 # User can buy reading for another user
 await send_invoice(

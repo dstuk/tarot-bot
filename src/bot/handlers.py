@@ -84,64 +84,100 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     callback_data = query.data
 
     if callback_data == "action:ask_question":
-        # Store the reading type and request payment
+        # Store the reading type
         session.conversation_context["reading_type"] = "automated"
-        session.state = SessionState.AWAITING_PAYMENT
-        session_service.save_session(session)
 
-        # Send payment invoice
-        await query.edit_message_text("⏳ Preparing payment invoice...")
+        # Check if this is user's first reading (free trial)
+        if session.is_first_reading():
+            # Skip payment for first reading
+            session.state = SessionState.AWAITING_QUESTION
+            session_service.save_session(session)
 
-        payment_titles = {
-            "en": "🔮 Tarot Reading",
-            "ru": "🔮 Гадание на Таро",
-            "uk": "🔮 Ворожіння на Таро"
-        }
-        payment_descriptions = {
-            "en": f"Get a 3-card Tarot reading with AI-powered interpretation ({STARS_PER_READING} ⭐)",
-            "ru": f"Получите расклад на 3 карты Таро с толкованием от ИИ ({STARS_PER_READING} ⭐)",
-            "uk": f"Отримайте розклад на 3 карти Таро з тлумаченням від ШІ ({STARS_PER_READING} ⭐)"
-        }
+            free_trial_messages = {
+                "en": "🎁 Your first reading is FREE! Please ask your question:",
+                "ru": "🎁 Ваше первое гадание БЕСПЛАТНО! Задайте свой вопрос:",
+                "uk": "🎁 Ваше перше ворожіння БЕЗКОШТОВНО! Поставте своє питання:"
+            }
 
-        await payment_service.send_invoice(
-            update=update,
-            context=context,
-            title=payment_titles.get(session.language, payment_titles["en"]),
-            description=payment_descriptions.get(session.language, payment_descriptions["en"]),
-            payload=f"reading:automated:{user_id}",
-            language=session.language
-        )
-        logger.info(f"User {user_id} initiated automated reading - payment requested")
+            prompt_message = free_trial_messages.get(session.language, free_trial_messages["en"])
+            await query.edit_message_text(prompt_message)
+            logger.info(f"User {user_id} initiated automated reading - FREE first reading")
+        else:
+            # Request payment for subsequent readings
+            session.state = SessionState.AWAITING_PAYMENT
+            session_service.save_session(session)
+
+            # Send payment invoice
+            await query.edit_message_text("⏳ Preparing payment invoice...")
+
+            payment_titles = {
+                "en": "🔮 Tarot Reading",
+                "ru": "🔮 Гадание на Таро",
+                "uk": "🔮 Ворожіння на Таро"
+            }
+            payment_descriptions = {
+                "en": f"Get a 3-card Tarot reading with AI-powered interpretation ({STARS_PER_READING} ⭐)",
+                "ru": f"Получите расклад на 3 карты Таро с толкованием от ИИ ({STARS_PER_READING} ⭐)",
+                "uk": f"Отримайте розклад на 3 карти Таро з тлумаченням від ШІ ({STARS_PER_READING} ⭐)"
+            }
+
+            await payment_service.send_invoice(
+                update=update,
+                context=context,
+                title=payment_titles.get(session.language, payment_titles["en"]),
+                description=payment_descriptions.get(session.language, payment_descriptions["en"]),
+                payload=f"reading:automated:{user_id}",
+                language=session.language
+            )
+            logger.info(f"User {user_id} initiated automated reading - payment requested")
 
     elif callback_data == "action:explain_combination":
-        # Store the reading type and request payment
+        # Store the reading type
         session.conversation_context["reading_type"] = "custom"
-        session.state = SessionState.AWAITING_PAYMENT
-        session_service.save_session(session)
 
-        # Send payment invoice
-        await query.edit_message_text("⏳ Preparing payment invoice...")
+        # Check if this is user's first reading (free trial)
+        if session.is_first_reading():
+            # Skip payment for first reading
+            session.state = SessionState.AWAITING_CUSTOM_QUESTION
+            session_service.save_session(session)
 
-        payment_titles = {
-            "en": "🔮 Custom Tarot Interpretation",
-            "ru": "🔮 Индивидуальное толкование Таро",
-            "uk": "🔮 Індивідуальне тлумачення Таро"
-        }
-        payment_descriptions = {
-            "en": f"Get interpretation for your own card combination ({STARS_PER_READING} ⭐)",
-            "ru": f"Получите толкование вашей комбинации карт ({STARS_PER_READING} ⭐)",
-            "uk": f"Отримайте тлумачення вашої комбінації карт ({STARS_PER_READING} ⭐)"
-        }
+            free_trial_messages = {
+                "en": "🎁 Your first reading is FREE! Please tell me your question:",
+                "ru": "🎁 Ваше первое гадание БЕСПЛАТНО! Расскажите ваш вопрос:",
+                "uk": "🎁 Ваше перше ворожіння БЕЗКОШТОВНО! Розкажіть ваше питання:"
+            }
 
-        await payment_service.send_invoice(
-            update=update,
-            context=context,
-            title=payment_titles.get(session.language, payment_titles["en"]),
-            description=payment_descriptions.get(session.language, payment_descriptions["en"]),
-            payload=f"reading:custom:{user_id}",
-            language=session.language
-        )
-        logger.info(f"User {user_id} initiated custom reading - payment requested")
+            prompt_message = free_trial_messages.get(session.language, free_trial_messages["en"])
+            await query.edit_message_text(prompt_message)
+            logger.info(f"User {user_id} initiated custom reading - FREE first reading")
+        else:
+            # Request payment for subsequent readings
+            session.state = SessionState.AWAITING_PAYMENT
+            session_service.save_session(session)
+
+            # Send payment invoice
+            await query.edit_message_text("⏳ Preparing payment invoice...")
+
+            payment_titles = {
+                "en": "🔮 Custom Tarot Interpretation",
+                "ru": "🔮 Индивидуальное толкование Таро",
+                "uk": "🔮 Індивідуальне тлумачення Таро"
+            }
+            payment_descriptions = {
+                "en": f"Get interpretation for your own card combination ({STARS_PER_READING} ⭐)",
+                "ru": f"Получите толкование вашей комбинации карт ({STARS_PER_READING} ⭐)",
+                "uk": f"Отримайте тлумачення вашої комбінації карт ({STARS_PER_READING} ⭐)"
+            }
+
+            await payment_service.send_invoice(
+                update=update,
+                context=context,
+                title=payment_titles.get(session.language, payment_titles["en"]),
+                description=payment_descriptions.get(session.language, payment_descriptions["en"]),
+                payload=f"reading:custom:{user_id}",
+                language=session.language
+            )
+            logger.info(f"User {user_id} initiated custom reading - payment requested")
 
 
 async def handle_text_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:

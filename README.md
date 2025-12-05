@@ -4,11 +4,13 @@ A multilingual Telegram bot that provides personalized Tarot card readings using
 
 ## Features
 
+- **Free Trial**: First reading is completely FREE for every new user
 - **Automated Tarot Readings**: Ask a question and receive a 3-card reading (Past-Present-Future)
 - **Custom Card Interpretation**: Input your own card combination for interpretation
 - **Multilingual Support**: Works in English, Russian, and Ukrainian with automatic language detection
 - **AI-Powered**: Uses Anthropic Claude for nuanced, context-aware interpretations
 - **Conversational**: Follow-up questions and contextual responses
+- **Telegram Stars Payment**: Subsequent readings cost 20 Telegram Stars (~$0.20-0.40)
 
 ## Quick Start
 

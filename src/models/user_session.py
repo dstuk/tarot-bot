@@ -62,6 +62,7 @@ class UserSession:
     language: str = "en"  # Detected language code
     state: SessionState = SessionState.IDLE
     last_reading: Optional[Reading] = None
+    reading_count: int = 0  # Total number of completed readings
     conversation_context: Dict[str, Any] = field(default_factory=dict)
     created_at: datetime = field(default_factory=datetime.now)
     updated_at: datetime = field(default_factory=datetime.now)
@@ -84,7 +85,12 @@ class UserSession:
     def save_reading(self, reading: Reading) -> None:
         """Save a completed reading to the session."""
         self.last_reading = reading
+        self.reading_count += 1
         self.update()
+
+    def is_first_reading(self) -> bool:
+        """Check if this is the user's first reading."""
+        return self.reading_count == 0
 
     def to_dict(self) -> dict:
         """Convert UserSession to dictionary for storage."""
@@ -93,6 +99,7 @@ class UserSession:
             "language": self.language,
             "state": self.state.value,
             "last_reading": self.last_reading.to_dict() if self.last_reading else None,
+            "reading_count": self.reading_count,
             "conversation_context": self.conversation_context,
             "created_at": self.created_at.isoformat(),
             "updated_at": self.updated_at.isoformat(),
@@ -108,6 +115,7 @@ class UserSession:
             last_reading=(
                 Reading.from_dict(data["last_reading"]) if data["last_reading"] else None
             ),
+            reading_count=data.get("reading_count", 0),
             conversation_context=data.get("conversation_context", {}),
             created_at=datetime.fromisoformat(data["created_at"]),
             updated_at=datetime.fromisoformat(data["updated_at"]),
