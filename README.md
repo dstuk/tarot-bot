@@ -112,6 +112,16 @@ This project follows the [Tarot Project Constitution](.specify/memory/constituti
 
 MIT License
 
+## Deployment
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions on deploying to Railway.app.
+
+**Quick Deploy to Railway:**
+1. Push code to GitHub
+2. Connect repository to Railway
+3. Add environment variables (TELEGRAM_BOT_TOKEN, ANTHROPIC_API_KEY)
+4. Deploy automatically!
+
 ## Support
 
 For issues or questions, please open an issue on GitHub.
