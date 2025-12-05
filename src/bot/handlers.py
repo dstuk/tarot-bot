@@ -108,7 +108,8 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
             }
 
             prompt_message = vip_messages.get(session.language, vip_messages["en"])
-            await query.edit_message_text(prompt_message)
+            await query.answer()  # Acknowledge button click
+            await query.message.reply_text(prompt_message)
             logger.info(f"User {user_id} initiated automated reading - WHITELISTED user (free)")
         # Check if this is user's first reading (free trial)
         elif session.is_first_reading():
@@ -123,7 +124,8 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
             }
 
             prompt_message = free_trial_messages.get(session.language, free_trial_messages["en"])
-            await query.edit_message_text(prompt_message)
+            await query.answer()  # Acknowledge button click
+            await query.message.reply_text(prompt_message)
             logger.info(f"User {user_id} initiated automated reading - FREE first reading")
         else:
             # Request payment for subsequent readings
@@ -131,7 +133,8 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
             session_service.save_session(session)
 
             # Send payment invoice
-            await query.edit_message_text("⏳ Preparing payment invoice...")
+            await query.answer()  # Acknowledge button click
+            await query.message.reply_text("⏳ Preparing payment invoice...")
 
             payment_titles = {
                 "en": "🔮 Tarot Reading",
@@ -171,7 +174,8 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
             }
 
             prompt_message = vip_messages.get(session.language, vip_messages["en"])
-            await query.edit_message_text(prompt_message)
+            await query.answer()  # Acknowledge button click
+            await query.message.reply_text(prompt_message)
             logger.info(f"User {user_id} initiated custom reading - WHITELISTED user (free)")
         # Check if this is user's first reading (free trial)
         elif session.is_first_reading():
@@ -186,7 +190,8 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
             }
 
             prompt_message = free_trial_messages.get(session.language, free_trial_messages["en"])
-            await query.edit_message_text(prompt_message)
+            await query.answer()  # Acknowledge button click
+            await query.message.reply_text(prompt_message)
             logger.info(f"User {user_id} initiated custom reading - FREE first reading")
         else:
             # Request payment for subsequent readings
@@ -194,7 +199,8 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
             session_service.save_session(session)
 
             # Send payment invoice
-            await query.edit_message_text("⏳ Preparing payment invoice...")
+            await query.answer()  # Acknowledge button click
+            await query.message.reply_text("⏳ Preparing payment invoice...")
 
             payment_titles = {
                 "en": "🔮 Custom Tarot Interpretation",
@@ -233,7 +239,9 @@ async def handle_view_history(update: Update, session: UserSession) -> None:
             "ru": "📜 У вас пока нет гаданий.\n\nНажмите 'Задать вопрос', чтобы получить первое гадание!",
             "uk": "📜 У вас поки немає ворожінь.\n\nНатисніть 'Поставити питання', щоб отримати перше ворожіння!"
         }
-        await query.edit_message_text(no_history_messages.get(session.language, no_history_messages["en"]))
+        await query.answer()  # Acknowledge button click
+        keyboard = get_main_menu_keyboard(session.language, show_history=False)
+        await query.message.reply_text(no_history_messages.get(session.language, no_history_messages["en"]), reply_markup=keyboard)
         return
 
     # Get recent history (last 5 readings)
@@ -271,8 +279,9 @@ async def handle_view_history(update: Update, session: UserSession) -> None:
     }
     message += footer_messages.get(session.language, footer_messages["en"])
 
+    await query.answer()  # Acknowledge button click
     keyboard = get_main_menu_keyboard(session.language, show_history=True)
-    await query.edit_message_text(message, reply_markup=keyboard, parse_mode="Markdown")
+    await query.message.reply_text(message, reply_markup=keyboard, parse_mode="Markdown")
     logger.info(f"User {user_id} viewed reading history ({len(history)} readings)")
 
 
