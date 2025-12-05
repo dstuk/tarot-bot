@@ -71,10 +71,17 @@ ENVIRONMENT=production
 LOG_LEVEL=INFO
 ```
 
-**Optional (if using Redis):**
+**Optional Variables:**
+
 ```env
+# Redis for persistent session storage
 REDIS_URL=redis://your_redis_host:6379/0
+
+# Payment whitelist for VIP/admin users (comma-separated user IDs)
+PAYMENT_WHITELIST=123456789,987654321
 ```
+
+**Note**: To find your Telegram user ID, message `@userinfobot` on Telegram. See [WHITELIST.md](WHITELIST.md) for details.
 
 ### 5. Add Redis (Optional but Recommended)
 
@@ -176,6 +183,7 @@ railway run python -m src.main
 | `TELEGRAM_BOT_TOKEN` | ✅ Yes | - | Bot token from @BotFather |
 | `ANTHROPIC_API_KEY` | ✅ Yes | - | Anthropic API key for AI |
 | `REDIS_URL` | ⚠️ Optional | - | Redis connection URL |
+| `PAYMENT_WHITELIST` | ⚠️ Optional | - | Comma-separated user IDs for free access |
 | `ENVIRONMENT` | ⚠️ Optional | `development` | Set to `production` |
 | `LOG_LEVEL` | ⚠️ Optional | `INFO` | Logging level |
 

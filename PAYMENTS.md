@@ -17,6 +17,12 @@ This bot uses **Telegram Stars** to charge 20 stars per Tarot reading.
 - No payment required for the first reading
 - Subsequent readings cost 20 Telegram Stars each
 
+### Payment Whitelist (VIP Access):
+- **Whitelisted users get UNLIMITED free readings** ✨
+- Configure via `PAYMENT_WHITELIST` environment variable
+- Useful for testing, admins, VIPs, or beta testers
+- See [WHITELIST.md](WHITELIST.md) for detailed setup instructions
+
 ### Payment States:
 - `AWAITING_PAYMENT` - Waiting for user to complete payment
 - `AWAITING_QUESTION` - Payment successful, waiting for question (automated reading)

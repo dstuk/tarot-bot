@@ -2,8 +2,9 @@
 import json
 import random
 from pathlib import Path
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Tuple
 from src.models.card import Card
+from rapidfuzz import fuzz, process
 
 
 class TarotDeck:
@@ -53,15 +54,47 @@ class TarotDeck:
             name = card.get_name(lang).lower()
             self.cards_by_name[lang][name] = card
 
+    def _normalize_card_name(self, name: str, language: str = "en") -> str:
+        """Normalize card name for better matching."""
+        normalized = name.lower().strip()
+
+        # Remove common prefixes/articles
+        normalized = normalized.replace("the ", "").replace("карта ", "").replace("карт ", "")
+
+        # Handle number variations for Slavic languages (Russian/Ukrainian)
+        if language in ["ru", "uk"]:
+            # Map common number words to standard forms
+            number_variations = {
+                # Russian/Ukrainian: short form → standard form
+                "один": "туз",  # ace
+                "одна": "туз",
+                "два": "двойка",
+                "две": "двойка",
+                "три": "тройка",
+                "четыре": "четверка",
+                "пять": "пятерка",
+                "шесть": "шестерка",
+                "семь": "семерка",
+                "восемь": "восьмерка",
+                "девять": "девятка",
+                "десять": "десятка",
+            }
+
+            for short_form, standard_form in number_variations.items():
+                # Replace if it's at the beginning of the string
+                if normalized.startswith(short_form + " "):
+                    normalized = normalized.replace(short_form + " ", standard_form + " ", 1)
+                    break
+
+        return normalized
+
     def get_card_by_id(self, card_id: int) -> Optional[Card]:
         """Get a card by its ID."""
         return self.cards_by_id.get(card_id)
 
     def get_card_by_name(self, name: str, language: str = "en") -> Optional[Card]:
         """Get a card by its name in the specified language."""
-        normalized_name = name.lower().strip()
-        # Remove common prefixes
-        normalized_name = normalized_name.replace("the ", "").replace("карта ", "")
+        normalized_name = self._normalize_card_name(name, language)
         return self.cards_by_name.get(language, {}).get(normalized_name)
 
     def draw_random_cards(self, count: int = 3) -> List[Card]:
@@ -70,23 +103,68 @@ class TarotDeck:
             count = len(self.cards)
         return random.sample(self.cards, count)
 
-    def find_similar_cards(self, name: str, language: str = "en", threshold: float = 0.8) -> List[Card]:
-        """Find cards with names similar to the search term (fuzzy matching)."""
-        # Simple fuzzy matching based on substring matching
-        # For production, consider using libraries like rapidfuzz or fuzzywuzzy
-        normalized_search = name.lower().strip()
-        matches = []
+    def find_similar_cards(self, name: str, language: str = "en", threshold: float = 70.0) -> List[Tuple[Card, float]]:
+        """
+        Find cards with names similar to the search term using fuzzy matching.
 
+        Args:
+            name: Card name to search for
+            language: Language code (en/ru/uk)
+            threshold: Minimum similarity score (0-100)
+
+        Returns:
+            List of tuples (card, score) sorted by similarity score (highest first)
+        """
+        normalized_search = self._normalize_card_name(name, language)
+
+        # Create choices for fuzzy matching
+        choices = {}
         for card in self.cards:
             card_name = card.get_name(language).lower()
-            # Check if search term is a substantial substring
-            if normalized_search in card_name or card_name in normalized_search:
-                matches.append(card)
-            # Check keywords
-            elif any(normalized_search in keyword.lower() for keyword in card.get_keywords(language)):
-                matches.append(card)
+            normalized_card_name = self._normalize_card_name(card_name, language)
+            choices[normalized_card_name] = card
+
+        # Use rapidfuzz to find best matches
+        results = process.extract(
+            normalized_search,
+            choices.keys(),
+            scorer=fuzz.WRatio,  # Weighted ratio works well for partial matches
+            limit=5,  # Return top 5 matches
+            score_cutoff=threshold  # Only return matches above threshold
+        )
+
+        # Convert results to (Card, score) tuples
+        matches = [(choices[match[0]], match[1]) for match in results]
 
         return matches
+
+    def get_card_by_name_fuzzy(self, name: str, language: str = "en", threshold: float = 80.0) -> Optional[Card]:
+        """
+        Get a card by name with fuzzy matching fallback.
+
+        First tries exact match, then falls back to fuzzy matching.
+        Returns the best match if similarity is above threshold.
+
+        Args:
+            name: Card name to search for
+            language: Language code (en/ru/uk)
+            threshold: Minimum similarity score for fuzzy match (0-100)
+
+        Returns:
+            Card object if found, None otherwise
+        """
+        # Try exact match first
+        exact_match = self.get_card_by_name(name, language)
+        if exact_match:
+            return exact_match
+
+        # Fall back to fuzzy matching
+        fuzzy_matches = self.find_similar_cards(name, language, threshold)
+        if fuzzy_matches:
+            # Return the best match (highest score)
+            return fuzzy_matches[0][0]
+
+        return None
 
     def get_all_cards(self) -> List[Card]:
         """Get all cards in the deck."""

@@ -10,6 +10,7 @@ from src.services.payment_service import payment_service, STARS_PER_READING
 from src.models.user_session import UserSession, SessionState, Reading
 from src.tarot.deck import TarotDeck
 from src.tarot.spreads import create_spread
+from src.config import config
 from datetime import datetime
 
 logger = logging.getLogger(__name__)
@@ -87,8 +88,23 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         # Store the reading type
         session.conversation_context["reading_type"] = "automated"
 
+        # Check if user is whitelisted (VIP/admin/tester)
+        if config.is_whitelisted(user_id):
+            # Skip payment for whitelisted users
+            session.state = SessionState.AWAITING_QUESTION
+            session_service.save_session(session)
+
+            vip_messages = {
+                "en": "✨ VIP access - Free reading! Please ask your question:",
+                "ru": "✨ VIP доступ - Бесплатное гадание! Задайте свой вопрос:",
+                "uk": "✨ VIP доступ - Безкоштовне ворожіння! Поставте своє питання:"
+            }
+
+            prompt_message = vip_messages.get(session.language, vip_messages["en"])
+            await query.edit_message_text(prompt_message)
+            logger.info(f"User {user_id} initiated automated reading - WHITELISTED user (free)")
         # Check if this is user's first reading (free trial)
-        if session.is_first_reading():
+        elif session.is_first_reading():
             # Skip payment for first reading
             session.state = SessionState.AWAITING_QUESTION
             session_service.save_session(session)
@@ -135,8 +151,23 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         # Store the reading type
         session.conversation_context["reading_type"] = "custom"
 
+        # Check if user is whitelisted (VIP/admin/tester)
+        if config.is_whitelisted(user_id):
+            # Skip payment for whitelisted users
+            session.state = SessionState.AWAITING_CUSTOM_QUESTION
+            session_service.save_session(session)
+
+            vip_messages = {
+                "en": "✨ VIP access - Free reading! Please tell me your question:",
+                "ru": "✨ VIP доступ - Бесплатное гадание! Расскажите ваш вопрос:",
+                "uk": "✨ VIP доступ - Безкоштовне ворожіння! Розкажіть ваше питання:"
+            }
+
+            prompt_message = vip_messages.get(session.language, vip_messages["en"])
+            await query.edit_message_text(prompt_message)
+            logger.info(f"User {user_id} initiated custom reading - WHITELISTED user (free)")
         # Check if this is user's first reading (free trial)
-        if session.is_first_reading():
+        elif session.is_first_reading():
             # Skip payment for first reading
             session.state = SessionState.AWAITING_CUSTOM_QUESTION
             session_service.save_session(session)
@@ -349,12 +380,16 @@ async def handle_cards_input(update: Update, session: UserSession, cards_text: s
     # Parse card names from text (comma-separated)
     card_names = [name.strip() for name in cards_text.split(",")]
 
-    # Find cards by name
+    # Find cards by name with fuzzy matching
     cards = []
+    unrecognized_names = []
     for card_name in card_names:
-        card = tarot_deck.get_card_by_name(card_name, session.language)
+        # Use fuzzy matching with 75% threshold
+        card = tarot_deck.get_card_by_name_fuzzy(card_name, session.language, threshold=75.0)
         if card:
             cards.append(card)
+        else:
+            unrecognized_names.append(card_name)
 
     # Validate at least one card was recognized
     if not cards:
@@ -362,6 +397,17 @@ async def handle_cards_input(update: Update, session: UserSession, cards_text: s
         await update.message.reply_text(error_message)
         logger.warning(f"User {user_id} provided unrecognizable card names: {cards_text}")
         return
+
+    # If some cards were not recognized, inform the user but continue with recognized cards
+    if unrecognized_names:
+        warning_messages = {
+            "en": f"⚠️ Note: Could not recognize these cards: {', '.join(unrecognized_names)}\n\nProceeding with recognized cards...",
+            "ru": f"⚠️ Внимание: Не удалось распознать эти карты: {', '.join(unrecognized_names)}\n\nПродолжаем с распознанными картами...",
+            "uk": f"⚠️ Увага: Не вдалося розпізнати ці карти: {', '.join(unrecognized_names)}\n\nПродовжуємо з розпізнаними картами..."
+        }
+        warning_msg = warning_messages.get(session.language, warning_messages["en"])
+        await update.message.reply_text(warning_msg)
+        logger.info(f"User {user_id} - {len(cards)} cards recognized, {len(unrecognized_names)} unrecognized: {unrecognized_names}")
 
     # Show processing message
     processing_message = translation_manager.get_message_text("processing", session.language)

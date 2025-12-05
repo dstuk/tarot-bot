@@ -7,6 +7,9 @@ anthropic>=0.25.0
 # Language Detection
 langdetect>=1.0.9
 
+# Fuzzy String Matching
+rapidfuzz>=3.0.0
+
 # Session Storage
 redis>=5.0.0
 
